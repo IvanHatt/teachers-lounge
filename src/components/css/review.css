@@ -2,11 +2,37 @@
   box-shadow: 12px 10px 22px 0px rgba(66, 85, 164, 0.51);
   padding: 5px 5px;
   border-radius: 20px !important;
-  background: #fff;
+  background: #EBEBEB;
   margin-left: 5px;
+ 
+}
+
+.review-card img{
+ width: 80px;
+}
+
+.review-card .card-body{
+  height: 250px;
+}
+
+.review-card .card-title {
+  font-size: 20px;
+  color: black !important;
+  text-align: center;
 }
 
 .review-card .card-text {
   line-height: normal;
   font-style: italic;
+  color: black !important;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 23px;
+
+}
+
+.card-image-dettached {
+  margin-top: -40px;
+  width: 110px;
+  height: 110px;
 }

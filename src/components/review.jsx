@@ -1,5 +1,6 @@
 import React from "react";
 import "components/css/review.css";
+import user from 'assets/user.jpg'
 
 const Review = () => {
   return (
@@ -13,9 +14,8 @@ const Review = () => {
             <div className="card-deck">
               <div className="review-card card">
                 <img
-                  style={{ width: "5rem" }}
-                  className="card-img-top rounded-circle img-thumbnail mx-auto d-block mt-2"
-                  src="https://cdn.pixabay.com/photo/2014/04/02/14/11/male-306408_960_720.png"
+                  className="card-img-top card-image-dettached rounded-circle img-thumbnail mx-auto d-block"
+                  src={user}
                   alt="Card cap"
                 ></img>
                 <div className="card-body">
@@ -25,16 +25,33 @@ const Review = () => {
                     Atque, quod exercitationem vero iste facilis sapiente tene
                     suscipit!"
                   </p>
-                  <p className="card-text">
+                  <p className="card-text  text-right">
                     <small className="text-muted">John, Tel Aviv</small>
                   </p>
                 </div>
               </div>
               <div className="review-card card">
                 <img
-                  style={{ width: "5rem" }}
-                  className="card-img-top rounded-circle img-thumbnail mx-auto d-block mt-2"
-                  src="https://cdn.pixabay.com/photo/2014/04/02/14/11/male-306408_960_720.png"
+                  className="card-img-top card-image-dettached rounded-circle img-thumbnail mx-auto d-block"
+                  src={user}
+                  alt="Card cap"
+                ></img>
+                <div className="card-body">
+                  <p className="card-title">Excellent!!</p>
+                  <p className="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Atque, quod exercitationem vero iste facilis sapiente tene
+                    suscipit!
+                  </p>
+                  <p className="card-text text-right">
+                    <small className="text-muted">John, Tel Aviv</small>
+                  </p>
+                </div>
+              </div>
+              <div className="review-card card">
+                <img
+                  className="card-img-top card-image-dettached rounded-circle img-thumbnail  mx-auto d-block"
+                  src={user}
                   alt="Card cap"
                 ></img>
                 <div className="card-body">
@@ -44,26 +61,7 @@ const Review = () => {
                     Atque, quod exercitationem vero iste facilis sapiente tene
                     suscipit!
                   </p>
-                  <p className="card-text">
-                    <small className="text-muted">John, Tel Aviv</small>
-                  </p>
-                </div>
-              </div>
-              <div className="review-card card">
-                <img
-                  style={{ width: "5rem" }}
-                  className="card-img-top rounded-circle img-thumbnail  mx-auto d-block mt-2"
-                  src="https://cdn.pixabay.com/photo/2014/04/02/14/11/male-306408_960_720.png"
-                  alt="Card cap"
-                ></img>
-                <div className="card-body">
-                  <h5 className="card-title">Excellent!!</h5>
-                  <p className="card-text">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Atque, quod exercitationem vero iste facilis sapiente tene
-                    suscipit!
-                  </p>
-                  <p className="card-text">
+                  <p className="card-text  text-right">
                     <small className="text-muted">John, Tel Aviv</small>
                   </p>
                 </div>
