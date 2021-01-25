@@ -1,0 +1,12 @@
+.review-card {
+  box-shadow: 12px 10px 22px 0px rgba(66, 85, 164, 0.51);
+  padding: 5px 5px;
+  border-radius: 20px !important;
+  background: #fff;
+  margin-left: 5px;
+}
+
+.review-card .card-text {
+  line-height: normal;
+  font-style: italic;
+}

@@ -1,0 +1,53 @@
+.banner-adv {
+  min-height: 855px;
+}
+
+.banner-adv h1 {
+  font-size: 64px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 22px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.banner-adv p {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 34px;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .banner-adv h1 {
+    font-size: 60px;
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .banner-adv h1 {
+    font-size: 50px;
+    line-height: 1.2;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .banner-adv h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .banner-adv {
+    min-height: 700px;
+  }
+  .banner-adv h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .banner-adv p {
+    font-size: 18px;
+    padding: 0 0px;
+  }
+}
