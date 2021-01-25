@@ -20,7 +20,7 @@ const BannerAdv = (props) => {
             </a>
           </div>
           <div className="col-xl-6 col-lg-5 col-md-8">
-            <img className="svg" src={image} alt="fff" />
+            <img className="img-fluid w-80" src={image} alt="learning" />
           </div>
         </div>
       </div>
