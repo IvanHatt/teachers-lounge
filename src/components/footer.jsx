@@ -13,9 +13,9 @@ class Footer extends Component {
   state = {};
   render() {
     return (
-      <footer className="main-footer pt-lg-5 pt-2">
+      <footer className="main-footer">
         <div className="container">
-          <div className="row">
+          <div className="row align-items-end">
             <div className="col-xl-9 col-lg-8 col-md-6 mb-4">
               <h1>About Us</h1>
               <p>Lorem ipsum dolor</p>

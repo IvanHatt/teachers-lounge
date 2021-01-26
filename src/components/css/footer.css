@@ -1,9 +1,11 @@
 .main-footer {
-  background: linear-gradient(
-    180deg,
-    rgba(168, 208, 230, 1) 35%,
-    rgba(134, 166, 184, 1) 100%
-  );
+  background: url("assets/bcg-wave-up.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-footer .row {
+  height: 300px;
 }
 
 .main-footer h1 {
