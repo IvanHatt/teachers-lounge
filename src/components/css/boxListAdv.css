@@ -1,15 +1,64 @@
-.boxListAdv {
+.box-list-adv {
   padding-top: 100px;
   padding-bottom: 100px;
   background: url("assets/bcg-boxlist.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
-.boxListAdv li {
+
+.box-list-adv li {
   font-family: "Mulish", sans-serif;
   color: #10285d;
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 15px;
   font-weight: normal;
+}
+
+.box-list-adv h1 {
+  font-size: 64px;
+  font-weight: 700;
+  color: #f8f8f8;
+  line-height: 1.3;
+  margin-bottom: 22px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.box-list-adv p {
+  color: #f8f8f8;
+  font-size: 20px;
+  margin-bottom: 34px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .box-list-adv h1 {
+    font-size: 60px;
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .box-list-adv h1 {
+    font-size: 50px;
+    line-height: 1.2;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .box-list-adv h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .box-list-adv h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .box-list-adv p {
+    font-size: 18px;
+    padding: 0 0px;
+  }
 }

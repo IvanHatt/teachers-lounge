@@ -24,8 +24,7 @@ class Home extends Component {
           description={
             "Lorem ipsum dolor sit amet consectetur adipisicing elit Veritatis voluptas ex quis ipsam incidunt quidem quia minus quaerat earum, odit, repellat necessitatibus, aspernatur veniam officia aliquid fugiat a? Et, accusamus?"
           }
-          title={"Learn new skills online with top educators"}
-          items={["Item1", "Item2", "Item3"]}
+          title={"Learn online with top educators"}
         />
         <Review />
       </React.Fragment>

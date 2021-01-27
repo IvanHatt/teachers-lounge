@@ -23,8 +23,9 @@ body {
   font-weight: normal;
   font-style: normal;
   font-size: 20px;
+  background-color: #4e4376 !important;
   background-image: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 

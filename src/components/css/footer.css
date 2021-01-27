@@ -41,3 +41,24 @@ ul.social-network li {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
+
+.social-network {
+  background-color: #f2f2f2;
+  margin-bottom: 0;
+  border-radius: 10px;
+}
+.faFacebook {
+  color: #4267b2;
+}
+
+.faInstagram {
+  color: #bc2a8d;
+}
+
+.faLinkedin {
+  color: #0072b1;
+}
+
+.faTwitter {
+  color: #1da1f2;
+}

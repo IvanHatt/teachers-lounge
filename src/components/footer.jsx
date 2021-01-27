@@ -4,7 +4,6 @@ import {
   faFacebook,
   faInstagram,
   faLinkedin,
-  faSnapchat,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import "components/css/footer.css";
@@ -23,30 +22,25 @@ class Footer extends Component {
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6">
               <h1>Find Us!</h1>
-              <ul className="social-network d-flex">
+              <ul className="social-network d-flex justify-content-around">
                 <li>
-                  <a href="/" className="social-icon">
+                  <a href="/" className="social-icon faFacebook">
                     <FontAwesomeIcon icon={faFacebook} />
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="social-icon">
+                  <a href="/" className="social-icon faInstagram">
                     <FontAwesomeIcon icon={faInstagram} />
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="social-icon">
+                  <a href="/" className="social-icon faLinkedin">
                     <FontAwesomeIcon icon={faLinkedin} />
                   </a>
                 </li>
                 <li>
-                  <a href="/" className="social-icon">
+                  <a href="/" className="social-icon faTwitter">
                     <FontAwesomeIcon icon={faTwitter} />
-                  </a>
-                </li>
-                <li>
-                  <a href="/" className="social-icon">
-                    <FontAwesomeIcon icon={faSnapchat} />
                   </a>
                 </li>
               </ul>

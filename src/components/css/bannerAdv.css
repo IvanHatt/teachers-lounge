@@ -5,7 +5,7 @@
 .banner-adv h1 {
   font-size: 64px;
   font-weight: 700;
-  color: #fff;
+  color: #f8f8f8;
   line-height: 1.3;
   margin-bottom: 22px;
   letter-spacing: 0.05em;
@@ -13,7 +13,7 @@
 }
 
 .banner-adv p {
-  color: #fff;
+  color: #f8f8f8;
   font-size: 20px;
   margin-bottom: 34px;
 }
