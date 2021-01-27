@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
+import "App.css";
 import { userService } from "services/userService";
 import Navbar from "components/navbar";
 import Footer from "components/footer";
@@ -32,7 +32,7 @@ class App extends Component {
         <header>
           <Navbar user={user} />
         </header>
-        <main style={{ "minHeight": "800px" }}>
+        <main style={{ minHeight: "800px" }}>
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/logout" component={Logout} />
