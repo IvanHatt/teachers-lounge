@@ -45,14 +45,6 @@ const SignUp = (props) => {
       <div className="login-body">
         <Form className="form-default">
           <div className="login-form">
-            <div className="logo-login">
-              <a href="/">
-                <img
-                  src="https://img.favpng.com/4/15/4/computer-icons-user-clip-art-png-favpng-P7rCuR0zF0NkxDdnENvBuytby.jpg"
-                  alt=""
-                />
-              </a>
-            </div>
             <h2>Register Here</h2>
             <TextInput
               label="First Name"

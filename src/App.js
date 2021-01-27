@@ -32,7 +32,7 @@ class App extends Component {
         <header>
           <Navbar user={user} />
         </header>
-        <main style={{ minHeight: "800px" }}>
+        <main style={{ minHeight: "700px" }}>
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/logout" component={Logout} />

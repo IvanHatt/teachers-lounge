@@ -35,14 +35,6 @@ const SignIn = (props) => {
       <div className="login-body">
         <Form className="form-default">
           <div className="login-form">
-            <div className="logo-login">
-              <a href="/">
-                <img
-                  src="https://img.favpng.com/4/15/4/computer-icons-user-clip-art-png-favpng-P7rCuR0zF0NkxDdnENvBuytby.jpg"
-                  alt=""
-                />
-              </a>
-            </div>
             <h2>Login Here</h2>
             <TextInput label="Email Address" name="email" type="email" />
             <TextInput label="Password" name="password" type="password" />
