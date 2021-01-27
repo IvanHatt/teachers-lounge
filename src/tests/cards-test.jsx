@@ -15,9 +15,9 @@ import {
 const CardsTest = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <div className="container prof-container">
+    <div className="container">
       <div className="row ">
-        <div className="col-xl-6">
+        <div className="col-xl-6 prof-container">
           <div className="card mx-auto mb-3 prof">
             <div className="row no-gutters">
               <div className="col-md-4">
