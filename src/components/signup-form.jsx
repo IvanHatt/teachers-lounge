@@ -8,6 +8,7 @@ import { userService } from "services/userService";
 import "components/css/forms.css";
 
 const SignUpForm = (props) => {
+  const { title } = props;
   if (userService.getCurrentUser()) return <Redirect to="/" />;
   return (
     <Formik
@@ -46,7 +47,7 @@ const SignUpForm = (props) => {
       <div className="login-body">
         <Form className="form-default">
           <div className="login-form">
-            <h2>Register Here</h2>
+            <h2>{title}</h2>
             <TextInput
               label="First Name"
               name="firstName"
@@ -66,7 +67,7 @@ const SignUpForm = (props) => {
               placeholder="jane@formik.com"
             />
             <TextInput label="Password" name="password" type="password" />
-            <button type="submit" className="btn">
+            <button type="submit" className="btn-styled">
               Register
             </button>
           </div>

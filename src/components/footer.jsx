@@ -46,8 +46,12 @@ class Footer extends Component {
               </ul>
             </div>
           </div>
-          <div className="text-center pb-3">
-            <p>© {new Date().getFullYear()} Copyright: Ivan Hattemer</p>
+          <div className="text-center p-3">
+            <p>
+              <small>
+                © {new Date().getFullYear()} Copyright: Ivan Hattemer
+              </small>
+            </p>
           </div>
         </div>
       </footer>

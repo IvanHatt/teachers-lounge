@@ -1,6 +1,6 @@
 import Header from "components/header";
+import Prof from "components/prof";
 import React, { Component } from "react";
-import CardsTest from "tests/cards-test";
 
 class About extends Component {
   state = {};
@@ -8,7 +8,17 @@ class About extends Component {
     return (
       <React.Fragment>
         <Header title="About" description="This is the Teachers' Lounge!" />
-        <CardsTest />
+        <div className="container">
+          <div className="row">
+            <Prof />
+            <Prof />
+            <Prof />
+            <Prof />
+            <Prof />
+            <Prof />
+            <Prof />
+          </div>
+        </div>
       </React.Fragment>
     );
   }

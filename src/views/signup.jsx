@@ -4,7 +4,7 @@ import { userService } from "services/userService";
 import SignUpForm from "components/signup-form";
 import image from "assets/signup-rafiki.svg";
 
-const SignUp = (props) => {
+const SignUp = () => {
   if (userService.getCurrentUser()) return <Redirect to="/" />;
   return (
     <div className="container">
@@ -13,7 +13,7 @@ const SignUp = (props) => {
           <img className="img-fluid w-80" src={image} alt="signin" />
         </div>
         <div className="col-xl-6 col-lg-7 col-md-12">
-          <SignUpForm />
+          <SignUpForm title="Sign Up and start learning!" />
         </div>
       </div>
     </div>

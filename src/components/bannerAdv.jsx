@@ -10,12 +10,7 @@ const BannerAdv = (props) => {
           <div className="col-xl-6 col-lg-7 col-md-12">
             <h1>{title}</h1>
             <p>{description}</p>
-            <a
-              href="/"
-              className="btn justify-content-center "
-              data-animation="fadeInLeft"
-              data-delay="0.7s"
-            >
+            <a href="/" className="btn-styled">
               Join for Free
             </a>
           </div>

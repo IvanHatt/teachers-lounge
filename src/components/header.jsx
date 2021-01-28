@@ -5,7 +5,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 const Header = (props) => {
   return (
-    <section className="header d-flex align-items-end">
+    <section className="view-header d-flex align-items-end">
       <div className="container">
         <div className="row">
           <div className="col-xl-8 col-lg-11 col-md-12">

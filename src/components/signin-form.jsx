@@ -39,7 +39,7 @@ const SignInForm = (props) => {
             <h2>Login Here</h2>
             <TextInput label="Email Address" name="email" type="email" />
             <TextInput label="Password" name="password" type="password" />
-            <button type="submit" className="btn">
+            <button type="submit" className="btn-styled">
               Sign In
             </button>
           </div>
