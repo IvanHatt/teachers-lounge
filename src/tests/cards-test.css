@@ -37,18 +37,20 @@
   font-family: "Dosis", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
   line-height: 38px;
   text-transform: uppercase;
-  text-align: center;
   color: #000000;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
-  margin-top: 0.5rem;
+}
+
+.prof-name.mob {
+  font-size: 25px;
+  text-align: center;
+  margin-top: -10px;
 }
 
 .card-body-details {
-  padding-left: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .prof-container .card .prof-details {
@@ -58,6 +60,7 @@
   font-size: 15px;
   line-height: 23px;
   color: #222222;
+  padding-left: 10px;
 }
 
 .prof-container .card .prof-details svg {
@@ -66,9 +69,9 @@
 }
 
 .prof-container .prof-image {
-  margin-top: 15px;
-  width: 110px;
-  height: 110px;
+  height: 180px;
+  display: grid;
+  place-items: center;
 }
 
 .prof-container .prof-image img {
@@ -81,6 +84,9 @@
 
 .prof-container .prof-header {
   height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .favorite-icon {
@@ -123,6 +129,7 @@
 
 .prof-container .prof-description {
   height: 120px;
+  padding-top: 10px;
 }
 
 .prof-container p {

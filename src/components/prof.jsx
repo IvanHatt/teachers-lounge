@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "components/css/prof.css";
+// import "components/css/prof.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDollarSign,
@@ -24,13 +24,13 @@ const Prof = ({ prof }) => {
   const [toggle, setToggle] = useState(false);
   return (
     <div className="col-xl-6 prof-container">
-      <div className="card mx-auto mb-3 prof">
+      <div className="card mx-auto mb-3">
         <div className="row no-gutters">
           <div className="col-md-4">
             <a href="/" className="favorite-icon icon-top mob">
               <FontAwesomeIcon icon={faStar} />
             </a>
-            <div className="prof-image mx-auto">
+            <div className="prof-image">
               <img
                 src={profImage}
                 className="img-radius"
@@ -38,8 +38,9 @@ const Prof = ({ prof }) => {
               ></img>
             </div>
             <div className="card-body-details">
+              <h3 className="prof-name mob">{profName}</h3>
               <ul className="prof-details">
-                <li>
+                <li className="mob">
                   <FontAwesomeIcon icon={faGraduationCap} />
                   <span>{profTitle}</span>
                 </li>
@@ -75,8 +76,14 @@ const Prof = ({ prof }) => {
             </div>
           )}
           <div className="col-md-8 desk">
-            <div className="prof-header d-flex">
-              <h5 className="prof-name">{profName}</h5>
+            <div className="prof-header">
+              <h3 className="prof-name mw-80">{profName}</h3>
+              <ul className="prof-details">
+                <li>
+                  <FontAwesomeIcon icon={faGraduationCap} />
+                  <span>{profTitle}</span>
+                </li>
+              </ul>
               <a href="/" className="favorite-icon icon-top">
                 <FontAwesomeIcon icon={faStar} />
               </a>
