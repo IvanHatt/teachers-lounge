@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { profService } from "services/profService";
 import Prof from "components/prof";
 
-class MyProfs extends Component {
+class Explore extends Component {
   state = {
     profs: [],
   };
@@ -34,4 +34,4 @@ class MyProfs extends Component {
   }
 }
 
-export default MyProfs;
+export default Explore;

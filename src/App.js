@@ -44,7 +44,7 @@ class App extends Component {
               component={ProfCreate}
               prof={true}
             />
-            <ProtectedRoute path="/my-profs" component={MyProfs} biz={true} />
+            <ProtectedRoute path="/my-profs" component={MyProfs} prof={true} />
             <Route path="/" exact component={Home} />
           </Switch>
         </main>
