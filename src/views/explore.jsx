@@ -8,7 +8,7 @@ class Explore extends Component {
   };
 
   async componentDidMount() {
-    const { data } = await profService.getProfs();
+    const { data } = await profService.getAllProfs();
     if (data.length > 0) this.setState({ profs: data });
   }
 
@@ -16,10 +16,10 @@ class Explore extends Component {
     const { profs } = this.state;
     return (
       <div className="container">
-        <h1>My cards</h1>
+        <h1>Explore all</h1>
         <div className="row">
           <div className="col-12">
-            <p>Your cards in the list below...</p>
+            <p>All teachers here...</p>
           </div>
         </div>
         <div className="row">

@@ -15,6 +15,7 @@ import ProfSignup from "views/profSignup";
 import ProfCreate from "views/profCreate";
 import ProtectedRoute from "helpers/protectedRoute";
 import MyProfs from "views/myProfs";
+import Explore from "views/explore";
 
 class App extends Component {
   state = {};
@@ -35,6 +36,7 @@ class App extends Component {
         <main style={{ minHeight: "700px" }}>
           <Switch>
             <Route path="/about" component={About} />
+            <Route path="/explore" component={Explore} />
             <Route path="/logout" component={Logout} />
             <Route path="/signin" component={Signin} />
             <Route path="/signup" component={Signup} />

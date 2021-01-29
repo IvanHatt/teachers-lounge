@@ -45,7 +45,7 @@ class Navbar extends Component {
                 </NavLink>
               </li>
               <li className="nav-item mr-3">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" to="/explore">
                   Explore
                 </NavLink>
               </li>

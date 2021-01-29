@@ -31,4 +31,16 @@ export async function getProfs() {
   }
 }
 
-export const profService = { createProf, getProfs };
+export async function getAllProfs() {
+  try {
+    return await http.get(`${apiUrl}/profs/all-profs`);
+  } catch (ex) {
+    if (ex.response && ex.response.status === 400) {
+      alert(ex.response.data);
+    } else {
+      alert("Communication problems.. try again later");
+    }
+  }
+}
+
+export const profService = { createProf, getProfs, getAllProfs };
