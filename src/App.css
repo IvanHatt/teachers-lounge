@@ -109,6 +109,27 @@ button:active {
   color: #f8f8f8 !important;
 }
 
+.btn-styled-small {
+  background-color: #f9f871;
+  padding: 0px 5px;
+  border: 1px solid #f9f871;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 0px rgb(0 0 0 / 48%);
+  color: #263238 !important;
+  transition: 0.2s linear, transform 0.2s;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-styled-small:active {
+  text-decoration: none;
+  box-shadow: 2px 2px 10px 0px rgb(0 0 0 / 48%) inset;
+}
+
+.btn-styled-small:hover {
+  text-decoration: none;
+}
+
 .uppercase {
   text-transform: uppercase;
 }

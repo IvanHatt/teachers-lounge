@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import "components/css/prof.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDollarSign,
@@ -10,8 +9,11 @@ import {
   faStar,
   faAngleDoubleDown,
 } from "@fortawesome/free-solid-svg-icons";
+import "components/css/prof.css";
+import { userService } from "services/userService";
 
 const Prof = ({ prof }) => {
+  const loggedIn = userService.getCurrentUser();
   const {
     profName,
     profTitle,
@@ -54,11 +56,17 @@ const Prof = ({ prof }) => {
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faAt} />
-                  <span>{profEmail}</span>
+                  {loggedIn ? (
+                    <span>{profEmail}</span>
+                  ) : (
+                    <a href="/signin" className="btn-styled-small">
+                      SignIn to discover
+                    </a>
+                  )}
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faPhone} />
-                  <span>{profPhone}</span>
+                  {loggedIn && <span>{profPhone}</span>}
                 </li>
               </ul>
               <button
