@@ -4,6 +4,8 @@ import TextInput from "helpers/textInput";
 import * as Yup from "yup";
 import { profService } from "services/profService";
 import "components/css/forms.css";
+import SelectInput from "helpers/selectInput";
+import { cities, categories } from "config/default.json";
 
 const ProfCreateForm = (props) => {
   return (
@@ -11,6 +13,7 @@ const ProfCreateForm = (props) => {
       initialValues={{
         profName: "",
         profTitle: "",
+        profCity: "",
         profDescription: "",
         profEmail: "",
         profPhone: "",
@@ -20,6 +23,7 @@ const ProfCreateForm = (props) => {
       validationSchema={Yup.object({
         profName: Yup.string().min(2).max(255).required(),
         profTitle: Yup.string().min(2).max(255).required(),
+        profCity: Yup.string().min(2).max(255).required(),
         profDescription: Yup.string().min(2).max(1024).required(),
         profEmail: Yup.string().min(6).max(255).required().email(),
         profPhone: Yup.string()
@@ -37,12 +41,13 @@ const ProfCreateForm = (props) => {
           <div className="login-form">
             <h2>Create your Card here!</h2>
             <TextInput label="Name" name="profName" type="text" />
-            <TextInput label="Title" name="profTitle" type="text" />
+            <SelectInput label="Title" name="profTitle" options={categories} />
+            <SelectInput label="City" name="profCity" options={cities} />
             <TextInput label="Description" name="profDescription" type="text" />
             <TextInput label="Phone" name="profPhone" type="text" />
-            <TextInput label="Image" name="profImage" type="text" />
             <TextInput label="Email Address" name="profEmail" type="email" />
             <TextInput label="Price" name="profPrice" type="text" />
+            <TextInput label="Image" name="profImage" type="text" />
             <button type="submit" className="btn btn-primary">
               Submit
             </button>

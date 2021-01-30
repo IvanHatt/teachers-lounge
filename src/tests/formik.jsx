@@ -1,81 +1,60 @@
 import React from "react";
-import { useFormik } from "formik";
+import { Formik, Form } from "formik";
+import TextInput from "helpers/textInput";
 import * as Yup from "yup";
+import { profService } from "services/profService";
+import "components/css/forms.css";
+import SelectInput from "helpers/selectInput";
+import { cities, categories } from "config/default.json";
 
-const SignUpFormT = () => {
-  const formik = useFormik({
-    initialValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      password: "",
-    },
-    validationSchema: Yup.object({
-      firstName: Yup.string()
-        .min(2, "Must be at least 2 characters")
-        .max(50, "Must be 50 characters or less")
-        .required("Required"),
-      lastName: Yup.string()
-        .min(2, "Must be at least 2 characters")
-        .max(50, "Must be 20 characters or less")
-        .required("Required"),
-      email: Yup.string().email("Invalid email address").required("Required"),
-      password: Yup.string().min(6).max(1024).required(),
-    }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
-
+const SignUpFormT = (props) => {
   return (
-    <div className="text-center container">
-      <form className="form-signin" onSubmit={formik.handleSubmit}>
-        <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label className="sr-only" htmlFor="firstName">
-          First Name
-        </label>
-        <input
-          id="firstName"
-          type="text"
-          placeholder="First Name"
-          className="form-control"
-          {...formik.getFieldProps("fistName")}
-        />
-        {formik.touched.firstName && formik.errors.firstName ? (
-          <div className="text-danger">{formik.errors.firstName}</div>
-        ) : null}
-        <label className="sr-only" htmlFor="lastName">
-          Last Name
-        </label>
-        <input
-          placeholder="Last Name"
-          className="form-control"
-          id="lastName"
-          type="text"
-          {...formik.getFieldProps("lastName")}
-        />
-        {formik.touched.lastName && formik.errors.lastName ? (
-          <div className="text-danger">{formik.errors.lastName}</div>
-        ) : null}
-        <label className="sr-only" htmlFor="email">
-          Email Address
-        </label>
-        <input
-          placeholder="Email address"
-          className="form-control"
-          id="email"
-          type="email"
-          {...formik.getFieldProps("email")}
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <div className="text-danger">{formik.errors.email}</div>
-        ) : null}
-        <button className="btn btn-lg btn-primary btn-block" type="submit">
-          {" "}
-          Submit{" "}
-        </button>
-      </form>
-    </div>
+    <Formik
+      initialValues={{
+        profName: "",
+        profTitle: "",
+        profCity: "",
+        profDescription: "",
+        profEmail: "",
+        profPhone: "",
+        profImage: "",
+        profPrice: "",
+      }}
+      validationSchema={Yup.object({
+        profName: Yup.string().min(2).max(255).required(),
+        profTitle: Yup.string().min(2).max(255).required(),
+        profCity: Yup.string().min(2).max(255).required(),
+        profDescription: Yup.string().min(2).max(1024).required(),
+        profEmail: Yup.string().min(6).max(255).required().email(),
+        profPhone: Yup.string()
+          .min(9)
+          .max(15)
+          .required()
+          .matches(/^0[2-9]\d{7,8}$/),
+        profImage: Yup.string().url().nullable(),
+        profPrice: Yup.string().min(1).max(4).required(),
+      })}
+      onSubmit={(values) => profService.createProf(values)}
+    >
+      <div className="login-body">
+        <Form className="form-default">
+          <div className="login-form">
+            <h2>Create your Card here!</h2>
+            <TextInput label="Name" name="profName" type="text" />
+            <SelectInput label="Title" name="profTitle" options={categories} />
+            <SelectInput label="City" name="profCity" options={cities} />
+            <TextInput label="Description" name="profDescription" type="text" />
+            <TextInput label="Phone" name="profPhone" type="text" />
+            <TextInput label="Email Address" name="profEmail" type="email" />
+            <TextInput label="Price" name="profPrice" type="text" />
+            <TextInput label="Image" name="profImage" type="text" />
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+        </Form>
+      </div>
+    </Formik>
   );
 };
 

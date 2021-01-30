@@ -17,6 +17,7 @@ const Prof = ({ prof }) => {
   const {
     profName,
     profTitle,
+    profCity,
     profDescription,
     profEmail,
     profImage,
@@ -44,7 +45,7 @@ const Prof = ({ prof }) => {
               <ul className="prof-details">
                 <li className="mob">
                   <FontAwesomeIcon icon={faGraduationCap} />
-                  <span>{profTitle}</span>
+                  <span>{profTitle} Teacher</span>
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faDollarSign} />
@@ -52,7 +53,7 @@ const Prof = ({ prof }) => {
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faMapMarkerAlt} />
-                  <span>Tel Aviv </span>
+                  <span>{profCity}</span>
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faAt} />
@@ -89,7 +90,7 @@ const Prof = ({ prof }) => {
               <ul className="prof-details">
                 <li>
                   <FontAwesomeIcon icon={faGraduationCap} />
-                  <span>{profTitle}</span>
+                  <span>{profTitle} Teacher</span>
                 </li>
               </ul>
               <a href="/" className="favorite-icon icon-top">
