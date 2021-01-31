@@ -15,6 +15,8 @@ export async function createProf(values) {
       alert(ex.response.data);
     } else {
       alert("Communication problems.. try again later");
+      const data = {};
+      return data;
     }
   }
 }
@@ -26,7 +28,9 @@ export async function getProfs() {
     if (ex.response && ex.response.status === 400) {
       alert(ex.response.data);
     } else {
-      alert("Communication problems.. try again later");
+      alert("Communication problems with server.. try again later");
+      const data = {};
+      return data;
     }
   }
 }
@@ -38,7 +42,9 @@ export async function getAllProfs() {
     if (ex.response && ex.response.status === 400) {
       alert(ex.response.data);
     } else {
-      alert("Communication problems.. try again later");
+      alert("Communication problem with server.. try again later");
+      const data = {};
+      return data;
     }
   }
 }

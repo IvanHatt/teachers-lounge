@@ -13,7 +13,7 @@ const ProfSignup = (props) => {
           <img className="img-fluid w-80" src={image} alt="signin" />
         </div>
         <div className="col-xl-6 col-lg-7 col-md-12">
-          <SignUpForm title="Sign Up as a Teacher" />
+          <SignUpForm title="Sign Up as a Teacher" isProf={true} />
         </div>
       </div>
     </div>

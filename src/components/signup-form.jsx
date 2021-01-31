@@ -8,7 +8,7 @@ import { userService } from "services/userService";
 import "components/css/forms.css";
 
 const SignUpForm = (props) => {
-  const { title } = props;
+  const { title, isProf } = props;
   if (userService.getCurrentUser()) return <Redirect to="/" />;
   return (
     <Formik
@@ -28,13 +28,13 @@ const SignUpForm = (props) => {
         password: Yup.string().min(6).max(1024).required("Required"),
       })}
       onSubmit={async (values) => {
-        values.prof = false;
+        values.prof = isProf;
         const { email, password } = values;
         try {
           await userService.signup(values);
           await userService.login(email, password);
           toast("Welcome");
-          window.location = "/";
+          window.location = isProf ? "/prof-create" : "/";
         } catch (ex) {
           if (ex.response && ex.response.status === 400) {
             toast.error(ex.response.data);

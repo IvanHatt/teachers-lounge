@@ -11,6 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "components/css/prof.css";
 import { userService } from "services/userService";
+import { profPlaceholder } from "config/default.json";
 
 const Prof = ({ prof }) => {
   const loggedIn = userService.getCurrentUser();
@@ -24,6 +25,7 @@ const Prof = ({ prof }) => {
     profPhone,
     profPrice,
   } = prof;
+
   const [toggle, setToggle] = useState(false);
   return (
     <div className="col-xl-6 prof-container">
@@ -35,30 +37,34 @@ const Prof = ({ prof }) => {
             </a>
             <div className="prof-image">
               <img
-                src={profImage}
+                src={profImage || profPlaceholder.profImage}
                 className="img-radius"
                 alt="User-Profile"
               ></img>
             </div>
             <div className="card-body-details">
-              <h3 className="prof-name mob">{profName}</h3>
+              <h3 className="prof-name mob">
+                {profName || profPlaceholder.profName}
+              </h3>
               <ul className="prof-details">
                 <li className="mob">
                   <FontAwesomeIcon icon={faGraduationCap} />
-                  <span>{profTitle} Teacher</span>
+                  <span>{profTitle || profPlaceholder.profTitle} Teacher</span>
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faDollarSign} />
-                  <span>{profPrice} ils per hour </span>
+                  <span>
+                    {profPrice || profPlaceholder.profPrice} ils per hour{" "}
+                  </span>
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faMapMarkerAlt} />
-                  <span>{profCity}</span>
+                  <span>{profCity || profPlaceholder.profCity}</span>
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faAt} />
                   {loggedIn ? (
-                    <span>{profEmail}</span>
+                    <span>{profEmail || profPlaceholder.profEmail}</span>
                   ) : (
                     <a href="/signin" className="btn-styled-small">
                       SignIn to discover
@@ -67,7 +73,9 @@ const Prof = ({ prof }) => {
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faPhone} />
-                  {loggedIn && <span>{profPhone}</span>}
+                  {loggedIn && (
+                    <span>{profPhone || profPlaceholder.profPhone}</span>
+                  )}
                 </li>
               </ul>
               <button
@@ -81,16 +89,18 @@ const Prof = ({ prof }) => {
           </div>
           {toggle && (
             <div className="p-3 mob">
-              <p>{profDescription}</p>
+              <p>{profDescription || profPlaceholder.profDescription}</p>
             </div>
           )}
           <div className="col-md-8 desk">
             <div className="prof-header">
-              <h3 className="prof-name mw-80">{profName}</h3>
+              <h3 className="prof-name mw-80">
+                {profName || profPlaceholder.profName}
+              </h3>
               <ul className="prof-details">
                 <li>
                   <FontAwesomeIcon icon={faGraduationCap} />
-                  <span>{profTitle} Teacher</span>
+                  <span>{profTitle || profPlaceholder.profTitle} Teacher</span>
                 </li>
               </ul>
               <a href="/" className="favorite-icon icon-top">
@@ -98,7 +108,7 @@ const Prof = ({ prof }) => {
               </a>
             </div>
             <div className="prof-description">
-              <p>{profDescription}</p>
+              <p>{profDescription || profPlaceholder.profDescription}</p>
             </div>
           </div>
         </div>

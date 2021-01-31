@@ -8,7 +8,7 @@ const TextInput = ({ label, ...props }) => {
       <label htmlFor={props.id || props.name}>{label}</label>
       <input {...field} {...props} />
       {meta.touched && meta.error ? (
-        <div className="text-danger">{meta.error}</div>
+        <div className="text-muted">{meta.error}</div>
       ) : null}
     </div>
   );

@@ -13,7 +13,7 @@ const SignUp = () => {
           <img className="img-fluid w-80" src={image} alt="signin" />
         </div>
         <div className="col-xl-6 col-lg-7 col-md-12">
-          <SignUpForm title="Sign Up and start learning!" />
+          <SignUpForm title="Sign Up and start learning!" isProf={false} />
         </div>
       </div>
     </div>

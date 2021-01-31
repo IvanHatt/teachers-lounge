@@ -9,7 +9,7 @@ class Explore extends Component {
 
   async componentDidMount() {
     const { data } = await profService.getAllProfs();
-    if (data.length > 0) this.setState({ profs: data });
+    if (data && data.length > 0) this.setState({ profs: data });
   }
 
   render() {
@@ -26,7 +26,13 @@ class Explore extends Component {
           {profs.length > 0 ? (
             profs.map((prof) => <Prof key={prof._id} prof={prof} />)
           ) : (
-            <p>No cards found...</p>
+            <p className="text-center">
+              <span
+                className="spinner-border spinner-border-sm"
+                role="status"
+                aria-hidden="true"
+              ></span>
+            </p>
           )}
         </div>
       </div>

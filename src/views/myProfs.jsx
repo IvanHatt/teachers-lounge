@@ -9,7 +9,7 @@ class MyProfs extends Component {
 
   async componentDidMount() {
     const { data } = await profService.getProfs();
-    if (data.length > 0) this.setState({ profs: data });
+    if (data && data.length > 0) this.setState({ profs: data });
   }
 
   render() {
