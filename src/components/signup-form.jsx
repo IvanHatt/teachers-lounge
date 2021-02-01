@@ -43,36 +43,45 @@ const SignUpForm = (props) => {
           }
         }
       }}
-    >
-      <div className="login-body">
-        <Form className="form-default">
-          <div className="login-form">
-            <h2>{title}</h2>
-            <TextInput
-              label="First Name"
-              name="firstName"
-              type="text"
-              placeholder="Jane"
-            />
-            <TextInput
-              label="Last Name"
-              name="lastName"
-              type="text"
-              placeholder="Doe"
-            />
-            <TextInput
-              label="Email Address"
-              name="email"
-              type="email"
-              placeholder="jane@formik.com"
-            />
-            <TextInput label="Password" name="password" type="password" />
-            <button type="submit" className="btn-styled">
-              Register
-            </button>
-          </div>
-        </Form>
-      </div>
+    > 
+      {(props) => (
+        <div className="login-body">
+          <Form className="form-default">
+            <div className="login-form">
+              <h2>{title}</h2>
+              <TextInput
+                label="First Name"
+                name="firstName"
+                type="text"
+                placeholder="Your Name"
+              />
+              <TextInput
+                label="Last Name"
+                name="lastName"
+                type="text"
+                placeholder="Your Last Name"
+              />
+              <TextInput
+                label="Email Address"
+                name="email"
+                type="email"
+                placeholder="Email address"
+              />
+              <TextInput label="Password" name="password" type="password" />
+              <button type="submit" className="btn-styled">
+                Register
+              </button>
+              <button
+                onClick={props.handleReset}
+                type="button"
+                className="btn-styled empty"
+              >
+                Reset
+              </button>
+            </div>
+          </Form>
+        </div>
+      )}
     </Formik>
   );
 };

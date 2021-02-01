@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDollarSign,
@@ -32,9 +33,15 @@ const Prof = ({ prof }) => {
       <div className="card mx-auto mb-3">
         <div className="row no-gutters">
           <div className="col-md-4">
-            <a href="/" className="favorite-icon icon-top mob">
+            <Link
+              to="/"
+              className="favorite-icon icon-top mob"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Add to Favorites"
+            >
               <FontAwesomeIcon icon={faStar} />
-            </a>
+            </Link>
             <div className="prof-image">
               <img
                 src={profImage || profPlaceholder.profImage}
@@ -66,9 +73,9 @@ const Prof = ({ prof }) => {
                   {loggedIn ? (
                     <span>{profEmail || profPlaceholder.profEmail}</span>
                   ) : (
-                    <a href="/signin" className="btn-styled-small">
+                    <Link to="/signin" className="btn-styled-small">
                       SignIn to discover
-                    </a>
+                    </Link>
                   )}
                 </li>
                 <li>
@@ -103,9 +110,15 @@ const Prof = ({ prof }) => {
                   <span>{profTitle || profPlaceholder.profTitle} Teacher</span>
                 </li>
               </ul>
-              <a href="/" className="favorite-icon icon-top">
+              <Link
+                to="/"
+                className="favorite-icon icon-top"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Add to Favorites"
+              >
                 <FontAwesomeIcon icon={faStar} />
-              </a>
+              </Link>
             </div>
             <div className="prof-description">
               <p>{profDescription || profPlaceholder.profDescription}</p>

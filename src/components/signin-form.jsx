@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form } from "formik";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import TextInput from "helpers/textInput";
 import { userService } from "services/userService";
 import "components/css/forms.css";
@@ -42,6 +42,9 @@ const SignInForm = (props) => {
             <button type="submit" className="btn-styled">
               Sign In
             </button>
+            <Link to="/sign-up" className="btn-styled empty">
+              Not a member yet?
+            </Link>
           </div>
         </Form>
       </div>

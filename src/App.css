@@ -92,7 +92,6 @@ button:active {
   transition: 0.2s linear, transform 0.2s;
   position: relative;
   z-index: 1;
-  overflow: hidden;
 }
 
 .btn-styled:hover {

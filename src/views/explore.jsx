@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { profService } from "services/profService";
 import Prof from "components/prof";
+import SidebarSearch from "components/sidebar-search";
 
 class Explore extends Component {
   state = {
@@ -15,25 +16,27 @@ class Explore extends Component {
   render() {
     const { profs } = this.state;
     return (
-      <div className="container">
-        <h1>Explore all</h1>
+      <div className="container-fluid">
         <div className="row">
-          <div className="col-12">
-            <p>All teachers here...</p>
+          <SidebarSearch />
+          <div role="main" className="col-md-10 ml-sm-auto col-lg-10 px-md-4">
+            <div className="container">
+              <h1>Explore all</h1>
+              <div className="row">
+                {profs.length > 0 ? (
+                  profs.map((prof) => <Prof key={prof._id} prof={prof} />)
+                ) : (
+                  <p className="text-center">
+                    <span
+                      className="spinner-border spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
+                  </p>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="row">
-          {profs.length > 0 ? (
-            profs.map((prof) => <Prof key={prof._id} prof={prof} />)
-          ) : (
-            <p className="text-center">
-              <span
-                className="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              ></span>
-            </p>
-          )}
         </div>
       </div>
     );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "components/css/bannerAdv.css";
 
 const BannerAdv = (props) => {
@@ -10,9 +11,12 @@ const BannerAdv = (props) => {
           <div className="col-xl-6 col-lg-7 col-md-12">
             <h1>{title}</h1>
             <p>{description}</p>
-            <a href="/" className="btn-styled">
+            <Link to="/signup" className="btn-styled">
               Join for Free
-            </a>
+            </Link>
+            <Link to="/prof-signup" className="btn-styled">
+              Join as a Teacher
+            </Link>
           </div>
           <div className="col-xl-6 col-lg-5 col-md-8">
             <img className="img-fluid w-80" src={image} alt="learning" />

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faDollarSign,
@@ -76,9 +78,9 @@ const CardsTest = () => {
             <div className="card mx-auto mb-3">
               <div className="row no-gutters">
                 <div className="col-md-4">
-                  <a href="/" className="favorite-icon icon-top mob">
+                  <Link to="/" className="favorite-icon icon-top mob">
                     <FontAwesomeIcon icon={faStar} />
-                  </a>
+                  </Link>
                   <div className="prof-image">
                     <img
                       src={profImage}
@@ -179,9 +181,9 @@ const CardsTest = () => {
                         </span>
                       </li>
                     </ul>
-                    <a href="/" className="favorite-icon icon-top">
+                    <Link to="/" className="favorite-icon icon-top">
                       <FontAwesomeIcon icon={faStar} />
-                    </a>
+                    </Link>
                   </div>
                   <div className="prof-description">
                     <p>

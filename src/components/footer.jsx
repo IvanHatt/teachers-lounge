@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -24,24 +26,24 @@ class Footer extends Component {
               <h1>Find Us!</h1>
               <ul className="social-network d-flex justify-content-around">
                 <li>
-                  <a href="/" className="social-icon faFacebook">
+                  <Link to="/" className="social-icon faFacebook">
                     <FontAwesomeIcon icon={faFacebook} />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/" className="social-icon faInstagram">
+                  <Link to="/" className="social-icon faInstagram">
                     <FontAwesomeIcon icon={faInstagram} />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/" className="social-icon faLinkedin">
+                  <Link to="/" className="social-icon faLinkedin">
                     <FontAwesomeIcon icon={faLinkedin} />
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/" className="social-icon faTwitter">
+                  <Link to="/" className="social-icon faTwitter">
                     <FontAwesomeIcon icon={faTwitter} />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

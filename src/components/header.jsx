@@ -2,6 +2,7 @@ import React from "react";
 import "components/css/header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
@@ -14,10 +15,10 @@ const Header = (props) => {
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb bg-transparent mb-0">
                 <li className="breadcrumb-item">
-                  <a href="/">
+                  <Link to="/">
                     <FontAwesomeIcon icon={faHome} />
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
                   {props.title}

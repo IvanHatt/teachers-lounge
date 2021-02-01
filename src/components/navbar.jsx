@@ -35,7 +35,7 @@ class Navbar extends Component {
           >
             <ul className="navbar-nav">
               <li className="nav-item mr-3">
-                <NavLink className="nav-link" to="/">
+                <NavLink className="nav-link" to="/" exact>
                   Home
                 </NavLink>
               </li>
