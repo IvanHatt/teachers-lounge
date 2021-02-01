@@ -27,6 +27,7 @@
   font-size: 18px;
   font-weight: 600;
   color: #fff;
+  margin-right: 10px;
 }
 .login-form .form-input input {
   outline: none;

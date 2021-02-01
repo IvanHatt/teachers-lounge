@@ -25,7 +25,10 @@ const SignUpForm = (props) => {
           .max(20, "Must be 20 characters or less")
           .required("Required"),
         email: Yup.string().email("Invalid email address").required("Required"),
-        password: Yup.string().min(6).max(1024).required("Required"),
+        password: Yup.string()
+          .min(6, "At least 6 characters")
+          .max(1024)
+          .required("Required"),
       })}
       onSubmit={async (values) => {
         values.prof = isProf;
@@ -43,7 +46,7 @@ const SignUpForm = (props) => {
           }
         }
       }}
-    > 
+    >
       {(props) => (
         <div className="login-body">
           <Form className="form-default">
@@ -64,7 +67,7 @@ const SignUpForm = (props) => {
               <TextInput
                 label="Email Address"
                 name="email"
-                type="email"
+                type="text"
                 placeholder="Email address"
               />
               <TextInput label="Password" name="password" type="password" />

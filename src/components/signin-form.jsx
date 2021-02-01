@@ -37,12 +37,12 @@ const SignInForm = (props) => {
         <Form className="form-default">
           <div className="login-form">
             <h2>Login Here</h2>
-            <TextInput label="Email Address" name="email" type="email" />
+            <TextInput label="Email Address" name="email" type="text" />
             <TextInput label="Password" name="password" type="password" />
             <button type="submit" className="btn-styled">
               Sign In
             </button>
-            <Link to="/sign-up" className="btn-styled empty">
+            <Link to="/signup" className="btn-styled empty">
               Not a member yet?
             </Link>
           </div>
