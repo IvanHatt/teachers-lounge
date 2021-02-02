@@ -15,6 +15,8 @@ import ProfCreate from "views/profCreate";
 import ProtectedRoute from "helpers/protectedRoute";
 import MyProfs from "views/myProfs";
 import Explore from "views/explore";
+import Favorites from "views/favorites";
+import DeleteCard from "helpers/delete-card";
 
 class App extends Component {
   state = {};
@@ -37,8 +39,10 @@ class App extends Component {
             <Route path="/about" component={About} />
             <Route path="/explore" component={Explore} />
             <Route path="/logout" component={Logout} />
+            <Route path="/delete-card/:id" component={DeleteCard} />
             <Route path="/signin" component={Signin} />
             <Route path="/signup" component={Signup} />
+            <Route path="/favorites" component={Favorites} />
             <Route path="/prof-signup" component={ProfSignup} />
             <ProtectedRoute
               path="/prof-create"

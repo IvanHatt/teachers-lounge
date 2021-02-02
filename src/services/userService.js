@@ -1,7 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import http from "services/httpService";
 import { apiUrl, tokenKey } from "config/default.json";
-
 import jwtDecode from "jwt-decode";
 
 export function logout() {
@@ -26,4 +25,14 @@ export async function signup(values) {
   return http.post(`${apiUrl}/users`, values);
 }
 
-export const userService = { login, getCurrentUser, logout, signup };
+export async function addFavorite(profId) {
+  console.log(profId);
+}
+
+export const userService = {
+  login,
+  getCurrentUser,
+  logout,
+  signup,
+  addFavorite, 
+};

@@ -9,9 +9,13 @@ import {
   faMapMarkerAlt,
   faStar,
   faAngleDoubleDown,
+  faTrashAlt,
+  faEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import "components/css/prof.css";
 import { userService } from "services/userService";
+import { profService } from "services/profService";
+
 import { profPlaceholder } from "config/default.json";
 
 const Prof = ({ prof }) => {
@@ -25,9 +29,13 @@ const Prof = ({ prof }) => {
     profImage,
     profPhone,
     profPrice,
+    profId,
+    user_id,
   } = prof;
+  console.log(profId);
 
   const [toggle, setToggle] = useState(false);
+
   return (
     <div className="col-xl-6 prof-container">
       <div className="card mx-auto mb-3">
@@ -110,15 +118,40 @@ const Prof = ({ prof }) => {
                   <span>{profTitle || profPlaceholder.profTitle} Teacher</span>
                 </li>
               </ul>
-              <Link
-                to="/"
-                className="favorite-icon icon-top"
-                data-toggle="tooltip"
-                data-placement="top"
-                title="Add to Favorites"
-              >
-                <FontAwesomeIcon icon={faStar} />
-              </Link>
+              <div className="icon-top">
+                <button
+                  type="button"
+                  onClick={() => userService.addFavorite(profId)}
+                  className="favorite-icon"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="Add to Favorites"
+                >
+                  <FontAwesomeIcon icon={faStar} />
+                </button>
+                {loggedIn && loggedIn.prof && (
+                  <React.Fragment>
+                    <Link
+                      to="/"
+                      className="favorite-icon"
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Edit Card"
+                    >
+                      <FontAwesomeIcon icon={faEdit} />
+                    </Link>
+                    <button
+                      className="favorite-icon"
+                      onClick={() => profService.deleteProf(profId)}
+                      data-toggle="tooltip"
+                      data-placement="top"
+                      title="Delete"
+                    >
+                      <FontAwesomeIcon icon={faTrashAlt} />
+                    </button>
+                  </React.Fragment>
+                )}
+              </div>
             </div>
             <div className="prof-description">
               <p>{profDescription || profPlaceholder.profDescription}</p>

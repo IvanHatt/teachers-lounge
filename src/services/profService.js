@@ -9,7 +9,7 @@ export async function createProf(values) {
     }
     await http.post(`${apiUrl}/profs`, values);
     toast("Saved!");
-    //redirect
+    window.location = "/my-profs";
   } catch (ex) {
     if (ex.response && ex.response.status === 400) {
       alert(ex.response.data);
@@ -48,5 +48,29 @@ export async function getAllProfs() {
     }
   }
 }
+export async function deleteProf(id) {
+  try {
+    await http.delete(`${apiUrl}/profs/${id}`);
+    window.location = "/my-profs";
+  } catch (ex) {
+    if (ex.response && ex.response.status === 400) {
+      alert(ex.response.data);
+    } else {
+      alert("Communication problem with server.. try again later");
+    }
+  }
+}
+export async function addProftoFavorite(id) {
+  try {
+    await http.delete(`${apiUrl}/profs/${id}`);
+    window.location = "/my-profs";
+  } catch (ex) {
+    if (ex.response && ex.response.status === 400) {
+      alert(ex.response.data);
+    } else {
+      alert("Communication problem with server.. try again later");
+    }
+  }
+}
 
-export const profService = { createProf, getProfs, getAllProfs };
+export const profService = { createProf, getProfs, getAllProfs, deleteProf };

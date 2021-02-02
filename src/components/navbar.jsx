@@ -86,11 +86,37 @@ class Navbar extends Component {
               )}
               {user && (
                 <React.Fragment>
-                  <li>
-                    <NavLink className="btn-styled" to="/logout">
-                      Logout
-                    </NavLink>
-                  </li>
+                  <div className="dropdown dropleft">
+                    <button
+                      className="btn-styled dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Profile
+                    </button>
+                    <div
+                      className="dropdown-menu "
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <NavLink className="dropdown-item" to="/favorites">
+                        Favorites
+                      </NavLink>
+                      <NavLink className="dropdown-item" to="/explore">
+                        Search
+                      </NavLink>
+                      {user && user.prof && (
+                        <NavLink className="dropdown-item" to="/my-profs">
+                          My Cards
+                        </NavLink>
+                      )}
+                      <NavLink className="dropdown-item" to="/logout">
+                        Logout
+                      </NavLink>
+                    </div>
+                  </div>
                 </React.Fragment>
               )}
             </ul>
