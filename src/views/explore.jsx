@@ -1,28 +1,54 @@
 import React, { Component } from "react";
 import { profService } from "services/profService";
 import Prof from "components/prof";
+import { RangeSlider, SelectPicker } from "rsuite";
+
 // import SidebarSearch from "components/sidebar-search";
+const listCities = [
+  { value: "Tel Aviv", label: "Tel Aviv" },
+  { value: "Holon", label: "Holon" },
+  { value: "Jerusalem", label: "Jerusalem" },
+];
+
+const listCategories = [
+  { value: "Biology teacher", label: "Biology" },
+  { value: "English teacher", label: "English" },
+  { value: "German teacher", label: "German" },
+];
 
 class Explore extends Component {
   state = {
     profs: [],
     city: "",
     category: "",
-    price: "",
+    price: [],
   };
 
   async componentDidMount() {
     const { data } = await profService.getAllProfs();
     if (data && data.length > 0) this.setState({ profs: data });
   }
-  filterCity = (e) => {
-    console.log(e.target);
+
+  setCity = (e) => {
+    this.setState({ city: e });
   };
+
+  setCategory = (e) => {
+    this.setState({ category: e });
+  };
+
+  setPriceRange = (e) => {
+    this.setState({ price: e });
+  };
+
   render() {
     let { profs, city, category, price } = this.state;
     if (city) profs = profs.filter((prof) => prof.profCity === city);
     if (category) profs = profs.filter((prof) => prof.profTitle === category);
-    if (price) profs = profs.filter((prof) => prof.profPrice === price);
+    if (price.length)
+      profs = profs.filter(
+        (prof) => prof.profPrice >= price[0] && prof.profPrice <= price[1]
+      );
     return (
       <div className="container-fluid">
         <div className="row">
@@ -35,23 +61,30 @@ class Explore extends Component {
               <div className="nav flex-column">
                 <div className="nav-item">
                   <label htmlFor="">Pick a city</label>
-                  <select name="" id="" onChange={(e) => this.filterCity(e)}>
-                    <option value="">a</option>
-                    <option value="">b</option>
-                    <option value="">c</option>
-                  </select>
+                  <SelectPicker
+                    data={listCities}
+                    onChange={(e) => this.setCity(e)}
+                    block={true}
+                    placeholder={"By city"}
+                  />
                 </div>
                 <div className="nav-item">
-                  <label htmlFor="">Pick an area</label>
-                  <select name="" id="">
-                    <option value="">a</option>
-                    <option value="">b</option>
-                    <option value="">c</option>
-                  </select>
+                  <label htmlFor="">Pick an area of study</label>
+                  <SelectPicker
+                    data={listCategories}
+                    onChange={(e) => this.setCategory(e)}
+                    block={true}
+                    placeholder={"By area of study"}
+                  />
                 </div>
                 <div className="nav-item">
                   <label htmlFor="">By Price</label>
-                  <input type="range" name="points" min="0" max="10" />
+                  <RangeSlider
+                    min={0}
+                    max={500}
+                    defaultValue={[0, 1000]}
+                    onChange={(e) => this.setPriceRange(e)}
+                  />
                 </div>
               </div>
             </div>

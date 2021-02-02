@@ -7,6 +7,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import "jquery/dist/jquery";
 import "bootstrap/dist/js/bootstrap";
 import "popper.js/dist/popper";
+import "rsuite/dist/styles/rsuite-default.css";
+import "App.css";
 
 ReactDOM.render(
   <React.StrictMode>
