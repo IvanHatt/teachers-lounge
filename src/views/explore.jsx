@@ -87,6 +87,29 @@ class Explore extends Component {
                   />
                 </div>
               </div>
+              {city && (
+                <button
+                  type="button"
+                  className="badge badge-pill badge-warning"
+                  onClick={() => this.setCity()}
+                >
+                  {city}
+                </button>
+              )}
+              {category && (
+                <button
+                  className="badge badge-pill badge-warning"
+                  onClick={() => this.setCategory()}
+                  type="button"
+                >
+                  {category}
+                </button>
+              )}
+              {price.length > 0 && (
+                <span className="badge badge-pill badge-warning">
+                  {price[0]}-{price[1]}
+                </span>
+              )}
             </div>
           </nav>
           <div role="main" className="col-md-10 ml-sm-auto col-lg-10 px-md-4">

@@ -30,9 +30,7 @@ const Prof = ({ prof }) => {
     profPhone,
     profPrice,
     profId,
-    user_id,
   } = prof;
-  console.log(profId);
 
   const [toggle, setToggle] = useState(false);
 

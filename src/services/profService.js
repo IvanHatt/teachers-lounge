@@ -12,9 +12,9 @@ export async function createProf(values) {
     window.location = "/my-profs";
   } catch (ex) {
     if (ex.response && ex.response.status === 400) {
-      alert(ex.response.data);
+      toast.error(ex.response.data);
     } else {
-      alert("Communication problems.. try again later");
+      toast.error("Communication problems.. try again later");
       const data = {};
       return data;
     }
@@ -26,9 +26,23 @@ export async function getProfs() {
     return await http.get(`${apiUrl}/profs/my-profs`);
   } catch (ex) {
     if (ex.response && ex.response.status === 400) {
-      alert(ex.response.data);
+      toast.error(ex.response.data);
     } else {
-      alert("Communication problems with server.. try again later");
+      toast.error("Communication problems with server.. try again later");
+      const data = {};
+      return data;
+    }
+  }
+}
+
+export async function getFavProfs() {
+  try {
+    return await http.get(`${apiUrl}/profs/myfav-profs`);
+  } catch (ex) {
+    if (ex.response && ex.response.status === 400) {
+      toast.error(ex.response.data);
+    } else {
+      toast.error("Communication problems with server.. try again later");
       const data = {};
       return data;
     }
@@ -40,9 +54,9 @@ export async function getAllProfs() {
     return await http.get(`${apiUrl}/profs/all-profs`);
   } catch (ex) {
     if (ex.response && ex.response.status === 400) {
-      alert(ex.response.data);
+      toast.error(ex.response.data);
     } else {
-      alert("Communication problem with server.. try again later");
+      toast.error("Communication problem with server.. try again later");
       const data = {};
       return data;
     }
@@ -54,11 +68,17 @@ export async function deleteProf(id) {
     window.location = "/my-profs";
   } catch (ex) {
     if (ex.response && ex.response.status === 400) {
-      alert(ex.response.data);
+      toast.error(ex.response.data);
     } else {
-      alert("Communication problem with server.. try again later");
+      toast.error("Communication problem with server.. try again later");
     }
   }
 }
 
-export const profService = { createProf, getProfs, getAllProfs, deleteProf };
+export const profService = {
+  createProf,
+  getProfs,
+  getAllProfs,
+  getFavProfs,
+  deleteProf,
+};

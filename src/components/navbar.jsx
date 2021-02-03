@@ -57,9 +57,9 @@ class Navbar extends Component {
                 )}
               </li>
               <li className="nav-item">
-                {user && user.prof && (
-                  <NavLink className="nav-link" to="/prof-create">
-                    Create Prof
+                {user && (
+                  <NavLink className="nav-link" to="/favorites">
+                    Favorites
                   </NavLink>
                 )}
               </li>
