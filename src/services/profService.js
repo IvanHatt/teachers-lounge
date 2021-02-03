@@ -60,17 +60,5 @@ export async function deleteProf(id) {
     }
   }
 }
-export async function addProftoFavorite(id) {
-  try {
-    await http.delete(`${apiUrl}/profs/${id}`);
-    window.location = "/my-profs";
-  } catch (ex) {
-    if (ex.response && ex.response.status === 400) {
-      alert(ex.response.data);
-    } else {
-      alert("Communication problem with server.. try again later");
-    }
-  }
-}
 
 export const profService = { createProf, getProfs, getAllProfs, deleteProf };

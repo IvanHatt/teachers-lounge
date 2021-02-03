@@ -2,6 +2,7 @@
 import http from "services/httpService";
 import { apiUrl, tokenKey } from "config/default.json";
 import jwtDecode from "jwt-decode";
+import { toast } from "react-toastify";
 
 export function logout() {
   localStorage.removeItem(tokenKey);
@@ -22,11 +23,20 @@ export async function login(email, password) {
 }
 
 export async function signup(values) {
-  return http.post(`${apiUrl}/users`, values);
+  return await http.post(`${apiUrl}/users`, values);
 }
 
 export async function addFavorite(profId) {
-  console.log(profId);
+  try {
+    await http.put(`${apiUrl}/users/${profId}`);
+    toast("Added to Favorites!");
+  } catch (ex) {
+    if (ex.response && ex.response.status === 404) {
+      toast.error(ex.response.data);
+    } else {
+      toast.error("Communication problem with server.. try again later");
+    }
+  }
 }
 
 export const userService = {
@@ -34,5 +44,5 @@ export const userService = {
   getCurrentUser,
   logout,
   signup,
-  addFavorite, 
+  addFavorite,
 };
