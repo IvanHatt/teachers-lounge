@@ -16,6 +16,7 @@ import ProtectedRoute from "helpers/protectedRoute";
 import MyProfs from "views/myProfs";
 import Explore from "views/explore";
 import Favorites from "views/favorites";
+import ProfEdit from "views/profEdit";
 
 class App extends Component {
   state = {};
@@ -45,6 +46,11 @@ class App extends Component {
             <ProtectedRoute
               path="/prof-create"
               component={ProfCreate}
+              prof={true}
+            />
+            <ProtectedRoute
+              path="/prof-edit"
+              component={ProfEdit}
               prof={true}
             />
             <ProtectedRoute path="/my-profs" component={MyProfs} prof={true} />
