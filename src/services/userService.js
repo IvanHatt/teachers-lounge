@@ -31,7 +31,7 @@ export async function addFavorite(profId) {
     await http.put(`${apiUrl}/users/${profId}`);
     toast("Added to Favorites!");
   } catch (ex) {
-    if (ex.response && ex.response.status === 404) {
+    if (ex.response && ex.response.status >= 400) {
       toast.error(ex.response.data);
     } else {
       toast.error("Communication problem with server.. try again later");

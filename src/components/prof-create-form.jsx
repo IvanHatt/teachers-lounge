@@ -9,21 +9,25 @@ import { cities, categories } from "config/default.json";
 import Prof from "./prof";
 import { profPlaceholder } from "config/default.json";
 
+const zeroValues = {
+  profName: "",
+  profTitle: "",
+  profCity: "",
+  profDescription: "",
+  profEmail: "",
+  profPhone: "",
+  profImage: "",
+  profPrice: "",
+};
+
 const ProfCreateForm = (props) => {
   const [profPreview, setProfPreview] = useState(profPlaceholder);
+  const [initialValues, setInitialValues] = useState(zeroValues);
+  if (props.profEdit) setInitialValues(props.profEdit);
   return (
     <React.Fragment>
       <Formik
-        initialValues={{
-          profName: "",
-          profTitle: "",
-          profCity: "",
-          profDescription: "",
-          profEmail: "",
-          profPhone: "",
-          profImage: "",
-          profPrice: "",
-        }}
+        initialValues={initialValues}
         validationSchema={Yup.object({
           profName: Yup.string()
             .min(2, "Min 2 characters!")

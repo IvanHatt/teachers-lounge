@@ -108,9 +108,14 @@ class Navbar extends Component {
                         Search
                       </NavLink>
                       {user && user.prof && (
-                        <NavLink className="dropdown-item" to="/my-profs">
-                          My Cards
-                        </NavLink>
+                        <React.Fragment>
+                          <NavLink className="dropdown-item" to="/my-profs">
+                            My Cards
+                          </NavLink>
+                          <NavLink className="dropdown-item" to="/prof-create">
+                            New Card
+                          </NavLink>
+                        </React.Fragment>
                       )}
                       <NavLink className="dropdown-item" to="/logout">
                         Logout

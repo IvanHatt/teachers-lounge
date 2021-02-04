@@ -5,6 +5,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const TextInput = ({ label, ...props }) => {
   const [field, meta] = useField(props);
+
   return (
     <div className="form-input">
       <label htmlFor={props.id || props.name}>{label} </label>

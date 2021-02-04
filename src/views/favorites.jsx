@@ -9,8 +9,9 @@ class Favorites extends Component {
   };
 
   async componentDidMount() {
-    const { data } = await profService.getFavProfs();
-    if (data && data.length > 0) this.setState({ profs: data });
+    const response = await profService.getFavProfs();
+    if (response && response.data.length > 0)
+      this.setState({ profs: response.data });
   }
 
   render() {

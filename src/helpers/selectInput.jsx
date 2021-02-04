@@ -15,8 +15,8 @@ const SelectInput = ({ label, ...props }) => {
       ) : null}
       <Field as="select" {...field} {...props}>
         {props.options.map((option) => (
-          <option key={option} value={option}>
-            {option}
+          <option key={option.value} value={option.value}>
+            {option.label}
           </option>
         ))}
       </Field>

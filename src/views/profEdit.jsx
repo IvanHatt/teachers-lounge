@@ -3,10 +3,10 @@ import image from "assets/teaching-rafiki.svg";
 import ProfCreateForm from "components/prof-create-form";
 import Header from "components/header";
 
-const ProfCreate = (props) => {
+const ProfEdit = (props) => {
   return (
     <React.Fragment>
-      <Header title="Create your Card" description="Create" />
+      <Header title="Edit your Card" description="Edit" />
       <div className="container">
         <div className="row">
           <div className="col-xl-4 col-lg-5 col-md-8">
@@ -14,13 +14,11 @@ const ProfCreate = (props) => {
           </div>
         </div>
         <div className="row">
-          <ProfCreateForm />
+          <ProfCreateForm profEdit={false} />
         </div>
       </div>
     </React.Fragment>
   );
 };
 
-export default ProfCreate;
-
-
+export default ProfEdit;

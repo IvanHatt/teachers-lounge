@@ -15,11 +15,11 @@ import {
 import "components/css/prof.css";
 import { userService } from "services/userService";
 import { profService } from "services/profService";
-
 import { profPlaceholder } from "config/default.json";
 
 const Prof = ({ prof }) => {
   const loggedIn = userService.getCurrentUser();
+  console.log(loggedIn._id);
   const {
     profName,
     profTitle,
@@ -30,6 +30,7 @@ const Prof = ({ prof }) => {
     profPhone,
     profPrice,
     profId,
+    user_id,
   } = prof;
 
   const [toggle, setToggle] = useState(false);
@@ -127,7 +128,7 @@ const Prof = ({ prof }) => {
                 >
                   <FontAwesomeIcon icon={faStar} />
                 </button>
-                {loggedIn && loggedIn.prof && (
+                {loggedIn && loggedIn.prof && loggedIn._id === user_id && (
                   <React.Fragment>
                     <Link
                       to="/"

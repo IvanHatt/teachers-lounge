@@ -1,6 +1,6 @@
 import Header from "components/header";
 import React, { Component } from "react";
-import CardsTest from "tests/cards-test";
+import { categories } from "config/default.json";
 
 class About extends Component {
   state = {};
@@ -10,7 +10,7 @@ class About extends Component {
         <Header title="About" description="This is the Teachers' Lounge!" />
         <div className="container">
           <div className="row">
-            <CardsTest />
+            {categories.map((city) => `{"value":"${city}","label":"${city}"},`)}
           </div>
         </div>
       </React.Fragment>
