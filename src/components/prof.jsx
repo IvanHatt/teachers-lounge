@@ -19,7 +19,7 @@ import { profPlaceholder } from "config/default.json";
 
 const Prof = ({ prof }) => {
   const loggedIn = userService.getCurrentUser();
-  console.log(loggedIn._id);
+  const [toggle, setToggle] = useState(false);
   const {
     profName,
     profTitle,
@@ -32,8 +32,6 @@ const Prof = ({ prof }) => {
     profId,
     user_id,
   } = prof;
-
-  const [toggle, setToggle] = useState(false);
 
   return (
     <div className="col-xl-6 prof-container">

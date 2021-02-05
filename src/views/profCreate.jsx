@@ -1,5 +1,6 @@
 import React from "react";
 import image from "assets/teaching-rafiki.svg";
+import { initialFormValues, profSchema } from "services/profService";
 import ProfCreateForm from "components/prof-create-form";
 import Header from "components/header";
 
@@ -14,7 +15,10 @@ const ProfCreate = (props) => {
           </div>
         </div>
         <div className="row">
-          <ProfCreateForm />
+          <ProfCreateForm
+            initialFormValues={initialFormValues}
+            profSchema={profSchema}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -22,5 +26,3 @@ const ProfCreate = (props) => {
 };
 
 export default ProfCreate;
-
-

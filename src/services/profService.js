@@ -1,8 +1,49 @@
 import { toast } from "react-toastify";
+import * as Yup from "yup";
 import Swal from "sweetalert2";
 import http from "services/httpService";
 import { apiUrl } from "config/default.json";
 
+export const profSchema = Yup.object({
+  profName: Yup.string()
+    .min(2, "Min 2 characters!")
+    .max(255, "Too long!")
+    .required("Required!"),
+  profTitle: Yup.string()
+    .min(2, "Min 2 characters!")
+    .max(255, "Too long!")
+    .required("Required!"),
+  profCity: Yup.string()
+    .min(2, "Min 2 characters!")
+    .max(255, "Too long!")
+    .required("Required!"),
+  profDescription: Yup.string().min(2).max(1024).required("Required!"),
+  profEmail: Yup.string()
+    .min(6, "Min 6 characters!")
+    .max(255, "Too long!")
+    .required("Required!")
+    .email("Invalid Email"),
+  profPhone: Yup.string()
+    .min(9, "Min 9 numbers!")
+    .max(15, "Too long!")
+    .required("Required!")
+    .matches(/\d{10,15}/, "Only numbers!"),
+  profImage: Yup.string().url().nullable(),
+  profPrice: Yup.string().min(1).max(4).required(),
+});
+
+export const initialFormValues = {
+  profName: "",
+  profTitle: "",
+  profCity: "",
+  profDescription: "",
+  profEmail: "",
+  profPhone: "",
+  profImage: "",
+  profPrice: "",
+};
+
+///creare prof card
 export async function createProf(values) {
   try {
     if (values.profImage === "") {
@@ -22,6 +63,7 @@ export async function createProf(values) {
   }
 }
 
+///get my own profs (the onwer)
 export async function getProfs() {
   try {
     return await http.get(`${apiUrl}/profs/my-profs`);
@@ -34,6 +76,7 @@ export async function getProfs() {
   }
 }
 
+/// get favorites
 export async function getFavProfs() {
   try {
     return await http.get(`${apiUrl}/profs/myfav-profs`);
@@ -46,6 +89,7 @@ export async function getFavProfs() {
   }
 }
 
+//// get all profs in db
 export async function getAllProfs() {
   try {
     return await http.get(`${apiUrl}/profs/all-profs`);
@@ -58,6 +102,7 @@ export async function getAllProfs() {
   }
 }
 
+// delete prof
 export async function deleteProf(id) {
   Swal.fire({
     icon: "warning",
@@ -85,10 +130,32 @@ export async function deleteProf(id) {
   });
 }
 
+///edit prof
+export async function editProf(id) {
+  console.log(id);
+}
+
+/// get one specific prof (onlt thw owner)
+export async function getOneProf(id) {
+  try {
+    return await http.get(`${apiUrl}/profs/${id}`);
+  } catch (ex) {
+    if (ex.response && ex.response.status >= 400) {
+      toast.error(ex.response.data);
+    } else {
+      toast.error("Communication problems with server.. try again later");
+    }
+  }
+}
+
 export const profService = {
   createProf,
   getProfs,
   getAllProfs,
   getFavProfs,
   deleteProf,
+  editProf,
+  getOneProf,
+  initialFormValues,
+  profSchema,
 };

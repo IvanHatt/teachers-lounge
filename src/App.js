@@ -49,7 +49,7 @@ class App extends Component {
               prof={true}
             />
             <ProtectedRoute
-              path="/prof-edit"
+              path="/prof-edit/:id"
               component={ProfEdit}
               prof={true}
             />

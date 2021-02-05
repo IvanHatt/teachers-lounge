@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form } from "formik";
 import TextInput from "helpers/textInput";
+import SelectInput from "helpers/selectInput";
 import { profService } from "services/profService";
 import "components/css/forms.css";
-import SelectInput from "helpers/selectInput";
 import { cities, categories } from "config/default.json";
 import Prof from "./prof";
-import { profPlaceholder } from "config/default.json";
 
-const ProfCreateForm = (props) => {
-  const [profPreview, setProfPreview] = useState(profPlaceholder);
+const ProfEditForm = (props) => {
+  const [profPreview, setProfPreview] = useState(props.initialFormValues);
+
   return (
     <React.Fragment>
       <Formik
@@ -17,7 +17,7 @@ const ProfCreateForm = (props) => {
         validationSchema={props.profSchema}
         validateOnBlur={false}
         validateOnChange={false}
-        onSubmit={(values) => profService.createProf(values)}
+        onSubmit={(values) => profService.editProf(values)}
       >
         {(props) => (
           <div className="col-xl-6 col-lg-7 col-md-12">
@@ -68,4 +68,4 @@ const ProfCreateForm = (props) => {
   );
 };
 
-export default ProfCreateForm;
+export default ProfEditForm;
