@@ -22,7 +22,9 @@ class MyProfs extends Component {
         <div className="container">
           <div className="row">
             {profs.length > 0 ? (
-              profs.map((prof) => <Prof key={prof._id} prof={prof} />)
+              profs.map((prof) => (
+                <Prof key={prof._id} prof={prof} myProfsDisplay={true} />
+              ))
             ) : (
               <p>No cards found...</p>
             )}

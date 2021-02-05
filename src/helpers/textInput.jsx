@@ -8,7 +8,7 @@ const TextInput = ({ label, ...props }) => {
 
   return (
     <div className="form-input">
-      <label htmlFor={props.id || props.name}>{label} </label>
+      <label htmlFor={props.id || props.name}> {label} </label>
       {meta.touched && meta.error ? (
         <span className="text-danger">
           <FontAwesomeIcon icon={faTimesCircle} /> {meta.error}

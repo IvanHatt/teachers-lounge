@@ -43,6 +43,17 @@
   border-bottom: 1px solid #fff;
 }
 
+.login-form .form-input textarea {
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  font-size: 18px;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
 .login-form .form-input select {
   outline: none;
   height: 40px;

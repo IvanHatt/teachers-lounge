@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Formik, Form } from "formik";
-import TextInput from "helpers/textInput";
 import { profService } from "services/profService";
 import "components/css/forms.css";
-import SelectInput from "helpers/selectInput";
 import { cities, categories } from "config/default.json";
 import Prof from "./prof";
 import { profPlaceholder } from "config/default.json";
+import FieldInput from "helpers/fieldInput";
 
 const ProfCreateForm = (props) => {
   const [profPreview, setProfPreview] = useState(profPlaceholder);
@@ -21,30 +20,59 @@ const ProfCreateForm = (props) => {
       >
         {(props) => (
           <div className="col-xl-6 col-lg-7 col-md-12">
-            <Form className="form-default">
+            <Form className="form-default" encType="multipart/form-data">
               <div className="login-form">
-                <TextInput label="Name" name="profName" type="text" />
+                <FieldInput
+                  as="input"
+                  label="Name"
+                  name="profName"
+                  type="text"
+                />
 
-                <SelectInput
+                <FieldInput
+                  as="select"
                   label="Title"
                   name="profTitle"
                   options={categories}
                 />
-                <SelectInput label="City" name="profCity" options={cities} />
-                <TextInput label="Price" name="profPrice" type="text" />
 
-                <TextInput
+                <FieldInput
+                  as="select"
+                  label="City"
+                  name="profCity"
+                  options={cities}
+                />
+                <FieldInput
+                  as="input"
+                  label="Price"
+                  name="profPrice"
+                  type="text"
+                />
+
+                <FieldInput
+                  as="input"
                   label="Email Address"
                   name="profEmail"
                   type="email"
                 />
-                <TextInput label="Phone" name="profPhone" type="text" />
-                <TextInput label="Image" name="profImage" type="text" />
-
-                <TextInput
+                <FieldInput
+                  as="input"
+                  label="Phone"
+                  name="profPhone"
+                  type="text"
+                />
+                <FieldInput
+                  as="input"
+                  label="Image"
+                  name="profImage"
+                  type="file"
+                />
+                <FieldInput
+                  as="textarea"
                   label="Description"
                   name="profDescription"
-                  type="textarea"
+                  type="text"
+                  rows="3"
                 />
 
                 <button type="submit" className="btn-styled">
@@ -56,6 +84,13 @@ const ProfCreateForm = (props) => {
                   className="btn-styled"
                 >
                   Preview
+                </button>
+                <button
+                  onClick={props.handleReset}
+                  type="button"
+                  className="btn-styled empty"
+                >
+                  Reset
                 </button>
               </div>
             </Form>

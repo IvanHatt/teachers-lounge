@@ -28,8 +28,22 @@ export async function signup(values) {
 
 export async function addFavorite(profId) {
   try {
-    await http.put(`${apiUrl}/users/${profId}`);
+    await http.put(`${apiUrl}/users/add-fav/${profId}`);
     toast("Added to Favorites!");
+  } catch (ex) {
+    if (ex.response && ex.response.status >= 400) {
+      toast.error(ex.response.data);
+    } else {
+      toast.error("Communication problem with server.. try again later");
+    }
+  }
+}
+
+export async function removeFavorite(profId) {
+  try {
+    await http.put(`${apiUrl}/users/delete-fav/${profId}`);
+    toast("Deleted from Favorites!");
+    window.location = "/favorites";
   } catch (ex) {
     if (ex.response && ex.response.status >= 400) {
       toast.error(ex.response.data);
@@ -45,4 +59,5 @@ export const userService = {
   logout,
   signup,
   addFavorite,
+  removeFavorite,
 };

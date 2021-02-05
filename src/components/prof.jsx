@@ -11,13 +11,14 @@ import {
   faAngleDoubleDown,
   faTrashAlt,
   faEdit,
+  faUsersSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import "components/css/prof.css";
 import { userService } from "services/userService";
 import { profService } from "services/profService";
 import { profPlaceholder } from "config/default.json";
 
-const Prof = ({ prof }) => {
+const Prof = ({ prof, favDisplay, myProfsDisplay }) => {
   const loggedIn = userService.getCurrentUser();
   const [toggle, setToggle] = useState(false);
   const {
@@ -116,38 +117,55 @@ const Prof = ({ prof }) => {
                 </li>
               </ul>
               <div className="icon-top">
-                <button
-                  type="button"
-                  onClick={() => userService.addFavorite(profId)}
-                  className="favorite-icon"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                  title="Add to Favorites"
-                >
-                  <FontAwesomeIcon icon={faStar} />
-                </button>
-                {loggedIn && loggedIn.prof && loggedIn._id === user_id && (
-                  <React.Fragment>
-                    <Link
-                      to="/"
-                      className="favorite-icon"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="Edit Card"
-                    >
-                      <FontAwesomeIcon icon={faEdit} />
-                    </Link>
-                    <button
-                      className="favorite-icon"
-                      onClick={() => profService.deleteProf(profId)}
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="Delete"
-                    >
-                      <FontAwesomeIcon icon={faTrashAlt} />
-                    </button>
-                  </React.Fragment>
+                {favDisplay && (
+                  <button
+                    type="button"
+                    onClick={() => userService.removeFavorite(profId)}
+                    className="favorite-icon"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Remove from to Favorites"
+                  >
+                    <FontAwesomeIcon icon={faUsersSlash} />
+                  </button>
                 )}
+                {!favDisplay && !myProfsDisplay && (
+                  <button
+                    type="button"
+                    onClick={() => userService.addFavorite(profId)}
+                    className="favorite-icon"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Add to Favorites"
+                  >
+                    <FontAwesomeIcon icon={faStar} />
+                  </button>
+                )}
+                {loggedIn &&
+                  loggedIn.prof &&
+                  loggedIn._id === user_id &&
+                  myProfsDisplay && (
+                    <React.Fragment>
+                      <Link
+                        to="/"
+                        className="favorite-icon"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Edit Card"
+                      >
+                        <FontAwesomeIcon icon={faEdit} />
+                      </Link>
+                      <button
+                        className="favorite-icon"
+                        onClick={() => profService.deleteProf(profId)}
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Delete"
+                      >
+                        <FontAwesomeIcon icon={faTrashAlt} />
+                      </button>
+                    </React.Fragment>
+                  )}
               </div>
             </div>
             <div className="prof-description">
