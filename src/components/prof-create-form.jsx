@@ -67,6 +67,7 @@ const ProfCreateForm = (props) => {
                   name="profImage"
                   type="file"
                 />
+
                 <FieldInput
                   as="textarea"
                   label="Description"
