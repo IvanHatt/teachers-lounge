@@ -4,11 +4,13 @@ import { profService } from "services/profService";
 import "components/css/forms.css";
 import { cities, categories } from "config/default.json";
 import Prof from "./prof";
-import { profPlaceholder } from "config/default.json";
+import { profPlaceholder, Imgplaceholder } from "config/default.json";
 import FieldInput from "helpers/fieldInput";
 
 const ProfCreateForm = (props) => {
   const [profPreview, setProfPreview] = useState(profPlaceholder);
+  const [imgPr, setImgPr] = useState(Imgplaceholder.profImage);
+
   return (
     <React.Fragment>
       <Formik
@@ -61,13 +63,27 @@ const ProfCreateForm = (props) => {
                   name="profPhone"
                   type="text"
                 />
-                <FieldInput
-                  as="input"
-                  label="Image"
-                  name="profImage"
-                  type="file"
-                />
+                <div className="form-input">
+                  <label htmlFor="file">File upload</label>
+                  <input
+                    id="profImage"
+                    name="profImage"
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => {
+                      let reader = new FileReader();
+                      let file = e.target.files[0];
+                      if (file) {
+                        props.setFieldValue("profImage", file);
+                        reader.onloadend = () => {
+                          setImgPr(reader.result);
+                        };
 
+                        reader.readAsDataURL(file);
+                      }
+                    }}
+                  />
+                </div>
                 <FieldInput
                   as="textarea"
                   label="Description"
@@ -87,7 +103,11 @@ const ProfCreateForm = (props) => {
                   Preview
                 </button>
                 <button
-                  onClick={props.handleReset}
+                  onClick={() => {
+                    setImgPr(Imgplaceholder.profImage);
+                    props.setFieldValue("profImage", "");
+                    props.handleReset();
+                  }}
                   type="button"
                   className="btn-styled empty"
                 >
@@ -98,8 +118,7 @@ const ProfCreateForm = (props) => {
           </div>
         )}
       </Formik>
-
-      <Prof prof={profPreview} />
+      <Prof prof={profPreview} imgPr={imgPr} />
     </React.Fragment>
   );
 };

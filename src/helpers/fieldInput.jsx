@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const FieldInput = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
+  const [field, meta, helpers] = useField(props);
+  console.log(props, field, meta);
   return (
     <div className="form-input">
       <label htmlFor={props.id || props.name}>{label}</label>
@@ -31,15 +32,7 @@ const FieldInput = ({ label, ...props }) => {
           onBlur={(e) => (e.target.placeholder = props.placeholder || "")}
         />
       )}
-      {props.as === "input" && (
-        <Field
-          as={props.as}
-          {...field}
-          {...props}
-          onFocus={(e) => (e.target.placeholder = "")}
-          onBlur={(e) => (e.target.placeholder = props.placeholder || "")}
-        />
-      )}
+      {props.as === "input" && <Field as={props.as} {...field} {...props} />}
     </div>
   );
 };

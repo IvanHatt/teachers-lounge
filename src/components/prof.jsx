@@ -18,7 +18,7 @@ import { userService } from "services/userService";
 import { profService } from "services/profService";
 import { profPlaceholder } from "config/default.json";
 
-const Prof = ({ prof, favDisplay, myProfsDisplay }) => {
+const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
   const loggedIn = userService.getCurrentUser();
   const [toggle, setToggle] = useState(false);
   const {
@@ -33,7 +33,6 @@ const Prof = ({ prof, favDisplay, myProfsDisplay }) => {
     profId,
     user_id,
   } = prof;
-
   return (
     <div className="col-xl-6 prof-container">
       <div className="card mx-auto mb-3">
@@ -50,7 +49,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay }) => {
             </Link>
             <div className="prof-image">
               <img
-                src={profImage || profPlaceholder.profImage}
+                src={props.imgPr ? props.imgPr : profImage}
                 className="img-radius"
                 alt="User-Profile"
               ></img>
@@ -137,6 +136,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay }) => {
                     data-toggle="tooltip"
                     data-placement="top"
                     title="Add to Favorites"
+                    disabled={props.imgPr}
                   >
                     <FontAwesomeIcon icon={faStar} />
                   </button>
@@ -147,7 +147,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay }) => {
                   myProfsDisplay && (
                     <React.Fragment>
                       <Link
-                        to="/"
+                        to={`/prof-edit/${profId}`}
                         className="favorite-icon"
                         data-toggle="tooltip"
                         data-placement="top"

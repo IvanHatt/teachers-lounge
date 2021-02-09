@@ -47,6 +47,7 @@ class ProfEdit extends Component {
 
   render() {
     const { prof } = this.state;
+
     return (
       <React.Fragment>
         <Header title="Edit your Card" description="Edit" />

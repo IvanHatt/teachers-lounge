@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form } from "formik";
 import FieldInput from "helpers/fieldInput";
 import { profService } from "services/profService";
@@ -9,6 +9,10 @@ import Prof from "./prof";
 const ProfEditForm = (props) => {
   const [profPreview, setProfPreview] = useState(props.initialFormValues);
 
+  useEffect(() => setProfPreview(props.initialFormValues), [
+    props.initialFormValues,
+  ]);
+
   return (
     <React.Fragment>
       <Formik
@@ -18,7 +22,7 @@ const ProfEditForm = (props) => {
         validateOnChange={false}
         onSubmit={(values) => profService.editProf(values)}
       >
-        {(props) => (
+        {( props) => (
           <div className="col-xl-6 col-lg-7 col-md-12">
             <Form className="form-default">
               <div className="login-form">
@@ -27,6 +31,7 @@ const ProfEditForm = (props) => {
                   label="Name"
                   name="profName"
                   type="text"
+                  //placeholder={profPreview.profName}
                 />
 
                 <FieldInput

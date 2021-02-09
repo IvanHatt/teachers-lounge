@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import Swal from "sweetalert2";
 import http from "services/httpService";
 import { apiUrl } from "config/default.json";
+import { serialize } from "object-to-formdata";
 
 export const profSchema = Yup.object({
   profName: Yup.string()
@@ -28,7 +29,7 @@ export const profSchema = Yup.object({
     .max(15, "Too long!")
     .required("Required!")
     .matches(/\d{10,15}/, "Only numbers!"),
-  profImage: Yup.string().url().nullable(),
+  profImage: Yup.mixed(),
   profPrice: Yup.string().min(1).max(4).required(),
 });
 
@@ -43,13 +44,16 @@ export const initialFormValues = {
   profPrice: "",
 };
 
-///creare prof card
+///create prof card
 export async function createProf(values) {
+  //convert from json to FormData
+  const dataForm = serialize(values);
   try {
-    if (values.profImage === "") {
-      values.profImage = null;
-    }
-    await http.post(`${apiUrl}/profs`, values);
+    await http.post(`${apiUrl}/profs`, dataForm, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     toast("Saved!");
     window.location = "/my-profs";
   } catch (ex) {
