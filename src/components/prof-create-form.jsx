@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { profService } from "services/profService";
 import "components/css/forms.css";
-import { cities, categories } from "config/default.json";
+import {
+  cities,
+  categories,
+  profPlaceholder,
+  Imgplaceholder,
+} from "config/default.json";
 import Prof from "./prof";
-import { profPlaceholder, Imgplaceholder } from "config/default.json";
 import FieldInput from "helpers/fieldInput";
 
 const ProfCreateForm = (props) => {

@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 const FieldInput = ({ label, ...props }) => {
-  const [field, meta, helpers] = useField(props);
-  console.log(props, field, meta);
+  const [field, meta] = useField(props);
+
   return (
     <div className="form-input">
       <label htmlFor={props.id || props.name}>{label}</label>
