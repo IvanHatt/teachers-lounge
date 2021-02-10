@@ -17,6 +17,7 @@ import "components/css/prof.css";
 import { userService } from "services/userService";
 import { profService } from "services/profService";
 import { profPlaceholder } from "config/default.json";
+import { apiUrl } from "config/default.json";
 
 const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
   const loggedIn = userService.getCurrentUser();
@@ -49,7 +50,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
             </Link>
             <div className="prof-image">
               <img
-                src={props.imgPr ? props.imgPr : profImage}
+                src={`${apiUrl}/profs/${profImage}` || profPlaceholder.profName}
                 className="img-radius"
                 alt="User-Profile"
               ></img>

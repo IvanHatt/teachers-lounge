@@ -135,11 +135,25 @@ export async function deleteProf(id) {
 }
 
 ///edit prof
-export async function editProf(id) {
-  console.log(id);
+export async function editProf(values) {
+  const profId = values.profId;
+  delete values.profId;
+  try {
+    await http.put(`${apiUrl}/profs/${profId}`, values);
+    toast("Updated!");
+    window.location = "/my-profs";
+  } catch (ex) {
+    if (ex.response && ex.response.status >= 400) {
+      toast.error(ex.response.data);
+    } else {
+      toast.error("Communication problems.. try again later");
+      const data = {};
+      return data;
+    }
+  }
 }
 
-/// get one specific prof (onlt thw owner)
+/// get one specific prof (only the owner)
 export async function getOneProf(id) {
   try {
     return await http.get(`${apiUrl}/profs/${id}`);

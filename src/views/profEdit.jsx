@@ -34,6 +34,7 @@ class ProfEdit extends Component {
 
   mapData(data) {
     return {
+      profId: this.props.match.params.id,
       profName: data.profName,
       profTitle: data.profTitle,
       profCity: data.profCity,

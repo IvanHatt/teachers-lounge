@@ -60,7 +60,7 @@ const ProfEditForm = (props) => {
                   if (file) {
                     props.setFieldValue("profImage", file);
                     reader.onloadend = () => {
-                      setImgPr(reader.result);
+                      setProfPreview({ profImage: reader.result });
                     };
 
                     reader.readAsDataURL(file);
@@ -111,7 +111,7 @@ const MyEnhancedForm = withFormik({
   enableReinitialize: true,
   validationSchema: (props) => props.profSchema,
   handleSubmit: (values) => {
-    console.log(values);
+    profService.editProf(values);
   },
 })(ProfEditForm);
 
