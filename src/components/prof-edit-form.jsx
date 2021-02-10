@@ -18,6 +18,11 @@ const ProfEditForm = (props) => {
   useEffect(() => setProfPreview(props.initialFormValues), [
     props.initialFormValues,
   ]);
+
+  useEffect(() => setImgPr(props.initialFormValues.profImage), [
+    props.initialFormValues,
+  ]);
+
   return (
     <React.Fragment>
       <div className="col-xl-6 col-lg-7 col-md-12">
@@ -60,7 +65,7 @@ const ProfEditForm = (props) => {
                   if (file) {
                     props.setFieldValue("profImage", file);
                     reader.onloadend = () => {
-                      setProfPreview({ profImage: reader.result });
+                      setImgPr(reader.result);
                     };
 
                     reader.readAsDataURL(file);

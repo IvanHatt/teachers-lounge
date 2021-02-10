@@ -50,7 +50,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
             </Link>
             <div className="prof-image">
               <img
-                src={`${apiUrl}/profs/${profImage}` || profPlaceholder.profName}
+                src={`${apiUrl}/profs/${profImage}` || prof.imgPr}
                 className="img-radius"
                 alt="User-Profile"
               ></img>
