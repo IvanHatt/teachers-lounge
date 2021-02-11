@@ -8,7 +8,6 @@ import Prof from "./prof";
 
 const ProfEditForm = (props) => {
   const [profPreview, setProfPreview] = useState(profPlaceholder);
-
   useEffect(() => setProfPreview(props.initialFormValues), [
     props.initialFormValues,
   ]);
@@ -19,7 +18,6 @@ const ProfEditForm = (props) => {
         <Form className="form-default">
           <div className="login-form">
             <FieldInput as="input" label="Name" name="profName" type="text" />
-
             <FieldInput
               as="select"
               label="Title"

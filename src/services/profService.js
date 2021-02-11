@@ -3,7 +3,6 @@ import * as Yup from "yup";
 import Swal from "sweetalert2";
 import http from "services/httpService";
 import { apiUrl } from "config/default.json";
-import { serialize } from "object-to-formdata";
 
 export const profSchema = Yup.object({
   profName: Yup.string()

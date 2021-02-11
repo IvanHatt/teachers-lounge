@@ -20,9 +20,7 @@ import { profPlaceholder } from "config/default.json";
 import { apiUrl } from "config/default.json";
 
 const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
-  //const value = useContext(ProfContext);
   const loggedIn = userService.getCurrentUser();
-  const profImage = loggedIn.profImage;
   const [toggle, setToggle] = useState(false);
   const {
     profName,
@@ -51,7 +49,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
             </Link>
             <div className="prof-image">
               <img
-                src={`${apiUrl}/profs/${profImage}`}
+                src={`${apiUrl}/profs/${prof.profImage}` || loggedIn.profImage}
                 className="img-radius"
                 alt="User-Profile"
               ></img>
