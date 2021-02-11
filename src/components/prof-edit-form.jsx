@@ -3,23 +3,13 @@ import { withFormik, Form } from "formik";
 import FieldInput from "helpers/fieldInput";
 import { profService } from "services/profService";
 import "components/css/forms.css";
-import {
-  cities,
-  categories,
-  profPlaceholder,
-  Imgplaceholder,
-} from "config/default.json";
+import { cities, categories, profPlaceholder } from "config/default.json";
 import Prof from "./prof";
 
 const ProfEditForm = (props) => {
   const [profPreview, setProfPreview] = useState(profPlaceholder);
-  const [imgPr, setImgPr] = useState(Imgplaceholder.profImage);
 
   useEffect(() => setProfPreview(props.initialFormValues), [
-    props.initialFormValues,
-  ]);
-
-  useEffect(() => setImgPr(props.initialFormValues.profImage), [
     props.initialFormValues,
   ]);
 
@@ -52,27 +42,6 @@ const ProfEditForm = (props) => {
               type="email"
             />
             <FieldInput as="input" label="Phone" name="profPhone" type="text" />
-            <div className="form-input">
-              <label htmlFor="file">File upload</label>
-              <input
-                id="profImage"
-                name="profImage"
-                type="file"
-                accept="image/*"
-                onChange={(e) => {
-                  let reader = new FileReader();
-                  let file = e.target.files[0];
-                  if (file) {
-                    props.setFieldValue("profImage", file);
-                    reader.onloadend = () => {
-                      setImgPr(reader.result);
-                    };
-
-                    reader.readAsDataURL(file);
-                  }
-                }}
-              />
-            </div>
 
             <FieldInput
               as="textarea"
@@ -93,11 +62,7 @@ const ProfEditForm = (props) => {
               Preview
             </button>
             <button
-              onClick={() => {
-                setImgPr(Imgplaceholder.profImage);
-                props.setFieldValue("profImage", "");
-                props.handleReset();
-              }}
+              onClick={props.handleReset}
               type="button"
               className="btn-styled empty"
             >
@@ -106,7 +71,7 @@ const ProfEditForm = (props) => {
           </div>
         </Form>
       </div>
-      <Prof prof={profPreview} imgPr={imgPr} />
+      <Prof prof={profPreview} />
     </React.Fragment>
   );
 };

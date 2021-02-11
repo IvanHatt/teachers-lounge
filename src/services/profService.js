@@ -29,7 +29,6 @@ export const profSchema = Yup.object({
     .max(15, "Too long!")
     .required("Required!")
     .matches(/\d{10,15}/, "Only numbers!"),
-  profImage: Yup.mixed(),
   profPrice: Yup.string().min(1).max(4).required(),
 });
 
@@ -40,20 +39,14 @@ export const initialFormValues = {
   profDescription: "",
   profEmail: "",
   profPhone: "",
-  profImage: "",
   profPrice: "",
 };
 
 ///create prof card
 export async function createProf(values) {
   //convert from json to FormData
-  const dataForm = serialize(values);
   try {
-    await http.post(`${apiUrl}/profs`, dataForm, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    await http.post(`${apiUrl}/profs`, values);
     toast("Saved!");
     window.location = "/my-profs";
   } catch (ex) {
