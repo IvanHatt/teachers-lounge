@@ -58,9 +58,9 @@ const SignUpForm = (props) => {
           <Form className="form-default">
             <div className="login-form">
               <h2>{title}</h2>
-              <img className="imgPr" src={imgPr} alt="profile" />
               {isProf && (
                 <div className="form-input">
+                  <img className="imgPr" src={imgPr} alt="profile" />
                   <label htmlFor="profImage"> Upload Image </label>
                   <input
                     id="profImage"
