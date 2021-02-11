@@ -3,6 +3,8 @@ import http from "services/httpService";
 import { apiUrl, tokenKey } from "config/default.json";
 import jwtDecode from "jwt-decode";
 import { toast } from "react-toastify";
+import * as Yup from "yup";
+import { serialize } from "object-to-formdata";
 
 export function logout() {
   localStorage.removeItem(tokenKey);
@@ -23,7 +25,8 @@ export async function login(email, password) {
 }
 
 export async function signup(values) {
-  return await http.post(`${apiUrl}/users`, values);
+  const dataForm = serialize(values);
+  return await http.post(`${apiUrl}/users`, dataForm);
 }
 
 export async function addFavorite(profId) {
@@ -53,6 +56,39 @@ export async function removeFavorite(profId) {
   }
 }
 
+export const userSchema = Yup.object({
+  firstName: Yup.string()
+    .min(2, "Must be at least 2 characters")
+    .max(15, "Must be 15 characters or less")
+    .required("Required"),
+  lastName: Yup.string()
+    .min(2, "Must be at least 2 characters")
+    .max(20, "Must be 20 characters or less")
+    .required("Required"),
+  email: Yup.string().email("Invalid email address").required("Required"),
+  password: Yup.string()
+    .min(6, "At least 6 characters")
+    .max(1024)
+    .required("Required"),
+});
+
+export const profUserSchema = Yup.object({
+  firstName: Yup.string()
+    .min(2, "Must be at least 2 characters")
+    .max(15, "Must be 15 characters or less")
+    .required("Required"),
+  lastName: Yup.string()
+    .min(2, "Must be at least 2 characters")
+    .max(20, "Must be 20 characters or less")
+    .required("Required"),
+  profImage: Yup.mixed(),
+  email: Yup.string().email("Invalid email address").required("Required"),
+  password: Yup.string()
+    .min(6, "At least 6 characters")
+    .max(1024)
+    .required("Required"),
+});
+
 export const userService = {
   login,
   getCurrentUser,
@@ -60,4 +96,6 @@ export const userService = {
   signup,
   addFavorite,
   removeFavorite,
+  userSchema,
+  profUserSchema,
 };

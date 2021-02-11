@@ -105,6 +105,6 @@
     "profImage": "public/uploads/avatar-placeholder.png"
   },
   "Imgplaceholder": {
-    "profImage": "public/uploads/avatar-placeholder.png"
+    "profImage": "http://localhost:3010/api/profs/public/uploads/avatar-placeholder.png"
   }
 }
