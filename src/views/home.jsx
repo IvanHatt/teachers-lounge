@@ -3,9 +3,7 @@ import teacherImg from "assets/teacher-rafiki.svg";
 import headerImg from "assets/learning-rafiki.svg";
 import { userService } from "services/userService";
 import BannerAdv from "components/bannerAdv";
-//import BoxAdv from "components/boxAdv";
 import BoxListAdv from "components/boxListAdv";
-// import Explore from "components/explore"; **see if ok to add ***
 import Review from "components/review";
 
 class Home extends Component {
