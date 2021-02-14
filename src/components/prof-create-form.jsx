@@ -8,7 +8,7 @@ import FieldInput from "helpers/fieldInput";
 
 const ProfCreateForm = (props) => {
   const [profPreview, setProfPreview] = useState(profPlaceholder);
- 
+
   return (
     <React.Fragment>
       <Formik
@@ -92,7 +92,7 @@ const ProfCreateForm = (props) => {
           </div>
         )}
       </Formik>
-      <Prof prof={profPreview} />
+      <Prof prof={profPreview} createProf={true} />
     </React.Fragment>
   );
 };

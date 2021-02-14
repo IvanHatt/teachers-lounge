@@ -101,9 +101,7 @@
     "profDescription": "Brief description of what do you offer, where did you study. Advertise yourself!",
     "profEmail": "Your Public Email",
     "profPhone": "Your Public Phone",
-    "profPrice": "Price",
-    "profImage": "http://localhost:3010/api/profs/public/uploads/avatar-placeholder.png"
-
+    "profPrice": "Price"
   },
   "Imgplaceholder": {
     "profImage": "http://localhost:3010/api/profs/public/uploads/avatar-placeholder.png"

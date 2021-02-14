@@ -33,6 +33,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
     profId,
     user_id,
   } = prof;
+  const profImage = prof.profImage || loggedIn.profImage;
   return (
     <div className="col-xl-6 prof-container">
       <div className="card mx-auto mb-3">
@@ -49,7 +50,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
             </Link>
             <div className="prof-image">
               <img
-                src={`${apiUrl}/profs/${prof.profImage}` || loggedIn.profImage}
+                src={`${apiUrl}/profs/${profImage}`}
                 className="img-radius"
                 alt="User-Profile"
               ></img>
@@ -136,7 +137,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
                     data-toggle="tooltip"
                     data-placement="top"
                     title="Add to Favorites"
-                    disabled={props.imgPr}
+                    disabled={props.createProf || !loggedIn}
                   >
                     <FontAwesomeIcon icon={faStar} />
                   </button>

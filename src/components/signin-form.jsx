@@ -34,7 +34,7 @@ const SignInForm = (props) => {
       }}
     >
       <div className="login-body">
-        <Form className="form-default">
+        <Form className="form-default" autoComplete="off">
           <div className="login-form">
             <h2>Login Here</h2>
             <FieldInput
@@ -52,8 +52,8 @@ const SignInForm = (props) => {
             <button type="submit" className="btn-styled">
               Sign In
             </button>
-            <Link to="/signup" className="btn-styled empty">
-              Not a member yet?
+            <Link to="/signup">
+              <span className="float-right text-muted">Not a member yet? </span>
             </Link>
           </div>
         </Form>

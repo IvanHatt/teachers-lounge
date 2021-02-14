@@ -12,14 +12,9 @@ const BannerAdv = (props) => {
             <h1>{title}</h1>
             <p>{description}</p>
             {!loggedIn && (
-              <React.Fragment>
-                <Link to="/signup" className="btn-styled">
-                  Join for Free
-                </Link>
-                <Link to="/prof-signup" className="btn-styled">
-                  Join as a Teacher
-                </Link>
-              </React.Fragment>
+              <Link to="/signup" className="btn-styled">
+                Join for Free
+              </Link>
             )}
           </div>
           <div className="col-xl-6 col-lg-5 col-md-8">

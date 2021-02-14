@@ -7,10 +7,10 @@ const Review = () => {
     <section className="reviews mb-5">
       <div className="container">
         <div className="text-center pb-3">
-          <h2>Students' reviews</h2>
+          <h1>Students' reviews</h1>
         </div>
         <div className="row justify-content-center card-container">
-          <div className="col-md-3">
+          <div className="col-lg-3">
             <div className="card review-card">
               <div className="card-block p-2">
                 <div className="review-image">
@@ -33,7 +33,7 @@ const Review = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-lg-3">
             <div className="card review-card">
               <div className="card-block p-2">
                 <div className="review-image">
@@ -56,7 +56,7 @@ const Review = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-lg-3">
             <div className="card review-card">
               <div className="card-block p-2">
                 <div className="review-image">

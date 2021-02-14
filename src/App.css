@@ -64,6 +64,11 @@ p {
   transition: 0.3s;
 }
 
+a:hover {
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  transition: 0.3s ease-in-out, transform 0.3s;
+}
+
 button:focus,
 input:focus,
 input:focus,
@@ -97,6 +102,7 @@ button:active {
 
 .btn-styled:hover {
   text-decoration: none;
+  text-shadow: none;
   border-radius: 5px 28px;
 }
 .btn-styled:active {
