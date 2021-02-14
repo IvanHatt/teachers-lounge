@@ -3,7 +3,7 @@ import { Formik, Form } from "formik";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { Redirect, Link } from "react-router-dom";
-import TextInput from "helpers/textInput";
+import FieldInput from "helpers/fieldInput";
 import { userService } from "services/userService";
 import "components/css/forms.css";
 
@@ -37,8 +37,18 @@ const SignInForm = (props) => {
         <Form className="form-default">
           <div className="login-form">
             <h2>Login Here</h2>
-            <TextInput label="Email Address" name="email" type="text" />
-            <TextInput label="Password" name="password" type="password" />
+            <FieldInput
+              as="input"
+              label="Email Address"
+              name="email"
+              type="text"
+            />
+            <FieldInput
+              as="input"
+              label="Password"
+              name="password"
+              type="password"
+            />
             <button type="submit" className="btn-styled">
               Sign In
             </button>
