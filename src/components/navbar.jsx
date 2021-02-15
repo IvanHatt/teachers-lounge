@@ -71,7 +71,7 @@ const Navbar = (props) => {
           className="collapse navbar-collapse justify-content-between"
           id="navbarNav"
         >
-          <ul className="navbar-nav">
+          <ul className="navbar-nav" style={scrollState === "nav-up" ? {display: 'inherit'}: {display: 'none'}}>
             <li className="nav-item mr-3">
               <NavLink className="nav-link" to="/" exact>
                 Home
@@ -88,11 +88,12 @@ const Navbar = (props) => {
               </NavLink>
             </li>
           </ul>
-          <ul className="navbar-nav mt-3 mt-sm-0">
+        </div>
+          <div className="mt-3 float-right">
             {!user && (
-              <React.Fragment>
+              <ul className='navbar-nav'>
                 <li>
-                  <NavLink className="btn-styled empty" to="/signin">
+                  <NavLink className="btn-styled opaque"  to="/signin">
                     Sign In
                   </NavLink>
                 </li>
@@ -101,7 +102,7 @@ const Navbar = (props) => {
                     Sign Up
                   </NavLink>
                 </li>
-              </React.Fragment>
+              </ul>
             )}
             {user && (
               <React.Fragment>
@@ -176,8 +177,7 @@ const Navbar = (props) => {
                 </div>
               </React.Fragment>
             )}
-          </ul>
-        </div>
+          </div>
       </nav>
     </div>
   );

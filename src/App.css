@@ -121,7 +121,12 @@ button:active {
 }
 
 .btn-styled.empty {
-  background: none !important;
+  background-color: transparent !important;
+  color: #f8f8f8 !important;
+}
+
+.btn-styled.opaque {
+  background:rgba(0, 0, 0, 0.3);
   color: #f8f8f8 !important;
 }
 
