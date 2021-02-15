@@ -4,7 +4,6 @@ import Prof from "components/prof";
 import { RangeSlider, SelectPicker } from "rsuite";
 import { cities, categories } from "config/default.json";
 import Header from "components/header";
-// import SidebarSearch from "components/sidebar-search";
 
 class Explore extends Component {
   state = {
@@ -43,14 +42,10 @@ class Explore extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <nav
-            id="sidebarMenu"
-            className="col-md-2 col-lg-2 d-md-block sidebar collapse"
-          >
-            <div className="sidebar-sticky pt-3">
+         <div className="col-3">
+          <div className="filter">
               <h1>Filter</h1>
-              <div className="nav flex-column">
-                <div className="nav-item">
+                <div className="filter-item">
                   <label htmlFor="">Pick a city</label>
                   <SelectPicker
                     data={cities}
@@ -59,7 +54,7 @@ class Explore extends Component {
                     placeholder={"By city"}
                   />
                 </div>
-                <div className="nav-item">
+                <div className="filter-item">
                   <label htmlFor="">Pick an area of study</label>
                   <SelectPicker
                     data={categories}
@@ -68,7 +63,7 @@ class Explore extends Component {
                     placeholder={"By area of study"}
                   />
                 </div>
-                <div className="nav-item">
+                <div className="filter-item">
                   <label htmlFor="">By Price</label>
                   <RangeSlider
                     min={0}
@@ -77,8 +72,8 @@ class Explore extends Component {
                     onChange={(e) => this.setPriceRange(e)}
                   />
                 </div>
-              </div>
-              {city && (
+                <div className="filter-item">
+                {city && (
                 <button
                   type="button"
                   className="badge badge-pill badge-warning"
@@ -101,10 +96,12 @@ class Explore extends Component {
                   {price[0]}-{price[1]}
                 </span>
               )}
+                </div>
+              
             </div>
-          </nav>
-          <div role="main" className="col-md-10 ml-sm-auto col-lg-10 px-md-4">
-            <div className="container">
+          </div>
+         <div className="col-9">
+           <div className="container" style={{minHeight: '1600px'}}>
               <Header
                 title="Explore"
                 description="This is the Teachers' Lounge!"
@@ -114,18 +111,15 @@ class Explore extends Component {
                   profs.map((prof) => <Prof key={prof._id} prof={prof} />)
                 ) : (
                   <p className="text-center">
-                    <span
-                      className="spinner-border spinner-border-sm"
-                      role="status"
-                      aria-hidden="true"
-                    ></span>
+                    <span> No Cards found...</span>
                   </p>
                 )}
               </div>
-            </div>
-          </div>
+           </div>
+         </div>
         </div>
       </div>
+        
     );
   }
 }
