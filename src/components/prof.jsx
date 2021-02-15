@@ -43,6 +43,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
             : "card mx-auto mb-3"
         }
       >
+        <div className='area-bgc'> <FontAwesomeIcon icon={faGraduationCap} size='3x'/> </div>
         <div className="row no-gutters">
           <div className="col-md-4">
             <Link

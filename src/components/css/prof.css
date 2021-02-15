@@ -148,3 +148,10 @@
 .img-radius {
   border-radius: 50%;
 }
+
+.area-bgc{
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  color: #fd9f89;
+}
