@@ -1,8 +1,9 @@
 .view-header {
   min-height: 200px;
-  /* background: url("assets/bcg-wave-down.svg");
-  background-size: cover;
-  background-repeat: no-repeat; */
+}
+
+.view-header.top-margin {
+  margin-top: 150px;
 }
 
 .view-header h1 {

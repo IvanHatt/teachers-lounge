@@ -1,8 +1,10 @@
 /* eslint-disable no-restricted-globals */
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { Formik, Form } from "formik";
 import { toast } from "react-toastify";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCameraRetro } from "@fortawesome/free-solid-svg-icons";
 import { userService } from "services/userService";
 import "components/css/forms.css";
 import FieldInput from "helpers/fieldInput";
@@ -59,9 +61,11 @@ const SignUpForm = (props) => {
             <div className="login-form">
               <h2>{title}</h2>
               {isProf && (
-                <div className="form-input">
-                  <img className="imgPr" src={imgPr} alt="profile" />
-                  <label htmlFor="profImage"> Upload Image </label>
+                <div className="form-input file-input">
+                  <label htmlFor="profImage">
+                    <img className="imgPr" src={imgPr} alt="profile" />
+                    <span>User Image</span>
+                  </label>
                   <input
                     id="profImage"
                     type="file"
@@ -86,21 +90,18 @@ const SignUpForm = (props) => {
                 label="First Name"
                 name="firstName"
                 type="text"
-                placeholder="Your Name"
               />
               <FieldInput
                 as="input"
                 label="Last Name"
                 name="lastName"
                 type="text"
-                placeholder="Your Last Name"
               />
               <FieldInput
                 as="input"
                 label="Email Address"
                 name="email"
                 type="text"
-                placeholder="Email address"
               />
               <FieldInput
                 as="input"
@@ -124,6 +125,13 @@ const SignUpForm = (props) => {
               >
                 Reset
               </button>
+              {!isProf && (
+                <Link to="/prof-signup">
+                  <span className="float-right text-muted">
+                    Are you a Teacher?
+                  </span>
+                </Link>
+              )}
             </div>
           </Form>
         </div>

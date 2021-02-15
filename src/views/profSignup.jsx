@@ -7,7 +7,7 @@ import image from "assets/teaching-rafiki.svg";
 const ProfSignup = (props) => {
   if (userService.getCurrentUser()) return <Redirect to="/" />;
   return (
-    <div className="container">
+    <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-xl-6 col-lg-5 col-md-8">
           <img className="img-fluid w-80" src={image} alt="signin" />
