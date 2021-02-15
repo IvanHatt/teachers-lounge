@@ -92,7 +92,7 @@ const ProfCreateForm = (props) => {
           </div>
         )}
       </Formik>
-      <Prof prof={profPreview} createProf={true} />
+      <Prof prof={profPreview} createProf={true} favDisable={true} />
     </React.Fragment>
   );
 };

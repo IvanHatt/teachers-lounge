@@ -1,5 +1,7 @@
-.main-navbar .navbar {
-  background-image: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
+@media only screen and (max-width: 1025px) {
+  .main-navbar .navbar {
+    background-image: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
+  }
 }
 .main-navbar .nav-link {
   color: white;

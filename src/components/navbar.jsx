@@ -15,18 +15,18 @@ import "components/css/navbar.css";
 
 const Navbar = (props) => {
   const { user } = props;
-  const [scrollState, setScrollState] = useState("top");
+  const [scrollState, setScrollState] = useState("nav-up");
 
   useEffect(() => {
     let listener = document.addEventListener("scroll", (e) => {
       var scrolled = document.scrollingElement.scrollTop;
       if (scrolled >= 120) {
-        if (scrollState !== "down") {
-          setScrollState("down");
+        if (scrollState !== "nav-down") {
+          setScrollState("nav-down");
         }
       } else {
-        if (scrollState !== "top") {
-          setScrollState("top");
+        if (scrollState !== "nav-up") {
+          setScrollState("nav-up");
         }
       }
     });
@@ -39,7 +39,7 @@ const Navbar = (props) => {
       <nav
         className="navbar fixed-top navbar-expand-lg"
         style={
-          scrollState === "top"
+          scrollState === "nav-up"
             ? {
                 padding: "40px",
                 transition: "0.3s ease-in-out",
@@ -104,7 +104,7 @@ const Navbar = (props) => {
             )}
             {user && (
               <React.Fragment>
-                <div className="dropdown">
+                <div className="dropdown dropleft">
                   <button
                     className="user-menu dropdown-toggle"
                     type="button"
@@ -119,7 +119,6 @@ const Navbar = (props) => {
                         alt="user"
                       />
                     )}
-                    Ivan Hattemer
                   </button>
                   <div
                     className="dropdown-menu"

@@ -101,7 +101,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
             </div>
           </div>
           {toggle && (
-            <div className="p-3 mob">
+            <div className="p-3 mob overflow-auto">
               <p>{profDescription || profPlaceholder.profDescription}</p>
             </div>
           )}
@@ -137,7 +137,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
                     data-toggle="tooltip"
                     data-placement="top"
                     title="Add to Favorites"
-                    disabled={props.createProf || !loggedIn}
+                    disabled={props.favDisable || !loggedIn}
                   >
                     <FontAwesomeIcon icon={faStar} />
                   </button>
@@ -169,7 +169,7 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
                   )}
               </div>
             </div>
-            <div className="prof-description">
+            <div className="prof-description overflow-auto">
               <p>{profDescription || profPlaceholder.profDescription}</p>
             </div>
           </div>

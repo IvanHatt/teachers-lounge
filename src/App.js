@@ -24,7 +24,7 @@ const App = () => {
   return (
     <React.Fragment>
       <ToastContainer position="top-center" />
-      <header style={{ minHeight: "150px" }}>
+      <header >
         <Navbar user={user} />
       </header>
       <main style={{ minHeight: "500px" }}>

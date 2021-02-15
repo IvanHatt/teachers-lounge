@@ -69,7 +69,7 @@ const ProfEditForm = (props) => {
           </div>
         </Form>
       </div>
-      <Prof prof={profPreview} />
+      <Prof prof={profPreview} favDisable={true} />
     </React.Fragment>
   );
 };
