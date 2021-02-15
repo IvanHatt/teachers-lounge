@@ -36,7 +36,13 @@ const Prof = ({ prof, favDisplay, myProfsDisplay, ...props }) => {
   const profImage = prof.profImage || loggedIn.profImage;
   return (
     <div className="col-xl-6 prof-container">
-      <div className="card mx-auto mb-3">
+      <div
+        className={
+          props.stickPreview
+            ? `card mx-auto mb-3 sticky-prof`
+            : "card mx-auto mb-3"
+        }
+      >
         <div className="row no-gutters">
           <div className="col-md-4">
             <Link

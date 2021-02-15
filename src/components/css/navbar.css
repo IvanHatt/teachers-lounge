@@ -37,8 +37,11 @@
   margin-right: 10px;
   display: inline-block;
 }
-.dropdown-menu .dropdown-item {
+.dropdown-menu .dropdown-item,
+.dropdown-menu .dropdown-header {
   color: aliceblue !important;
+  font-size: 1rem !important;
+  font-weight: 400;
 }
 
 .dropdown-menu .dropdown-item:hover {

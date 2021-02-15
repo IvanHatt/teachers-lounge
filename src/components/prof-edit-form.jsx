@@ -6,6 +6,7 @@ import "components/css/forms.css";
 import { cities, categories, profPlaceholder } from "config/default.json";
 import Prof from "./prof";
 
+
 const ProfEditForm = (props) => {
   const [profPreview, setProfPreview] = useState(profPlaceholder);
   useEffect(() => setProfPreview(props.initialFormValues), [
@@ -69,7 +70,7 @@ const ProfEditForm = (props) => {
           </div>
         </Form>
       </div>
-      <Prof prof={profPreview} favDisable={true} />
+      <Prof prof={profPreview} stickPreview={true} favDisable={true} />
     </React.Fragment>
   );
 };

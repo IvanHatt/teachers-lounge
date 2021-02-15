@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { Formik, Form } from "formik";
 import { toast } from "react-toastify";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCameraRetro } from "@fortawesome/free-solid-svg-icons";
 import { userService } from "services/userService";
 import "components/css/forms.css";
 import FieldInput from "helpers/fieldInput";

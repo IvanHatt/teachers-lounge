@@ -8,6 +8,7 @@ import {
   faSignOutAlt,
   faGraduationCap,
   faAddressCard,
+  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { apiUrl } from "config/default.json";
 import logo from "assets/logo.svg";
@@ -113,19 +114,28 @@ const Navbar = (props) => {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    {user.prof && (
+                    {user.prof ? (
                       <img
                         src={`${apiUrl}/profs/${user.profImage}`}
                         alt="user"
                       />
+                    ) : (
+                      <span>
+                        Student
+                        <FontAwesomeIcon
+                          icon={faUserCircle}
+                          size="3x"
+                          style={{ color: "#f9f871" }}
+                        />
+                      </span  >
                     )}
                   </button>
                   <div
                     className="dropdown-menu"
                     aria-labelledby="dropdownMenuButton"
                   >
-                    <span className="dropdown-item">Ivan Hattemer </span>
-                    <span className="dropdown-item">ivan@de.de </span>
+                    <span className="dropdown-header">{user.profName}</span>
+                    <span className="dropdown-header">{user.profEmail}</span>
                     <hr />
                     <NavLink className="dropdown-item" to="/favorites">
                       <div className="icon">

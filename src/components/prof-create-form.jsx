@@ -81,7 +81,10 @@ const ProfCreateForm = (props) => {
                   Preview
                 </button>
                 <button
-                  onClick={props.handleReset}
+                  onClick={() => {
+                    setProfPreview(profPlaceholder);
+                    props.handleReset();
+                  }}
                   type="button"
                   className="btn-styled empty"
                 >
@@ -92,7 +95,7 @@ const ProfCreateForm = (props) => {
           </div>
         )}
       </Formik>
-      <Prof prof={profPreview} createProf={true} favDisable={true} />
+      <Prof prof={profPreview} stickPreview={true} favDisable={true} />
     </React.Fragment>
   );
 };

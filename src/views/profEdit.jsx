@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import image from "assets/teaching-rafiki.svg";
 import {
   profSchema,
   initialFormValues,
@@ -7,19 +6,6 @@ import {
 } from "services/profService";
 import Header from "components/header";
 import ProfEditForm from "components/prof-edit-form";
-
-// const fromdb = {
-//   profName: "Marina Hattemer",
-//   profTitle: "English",
-//   profCity: "Tel Aviv",
-//   profDescription:
-//     "Cras ut mi non est ultricies vulputate. Morbi sit amet ipsum cursus, pharetra augue nec, consequat ipsum. Nam vulputate mi ut ante dictum, sed iaculis mi suscipit. ",
-//   profEmail: "mari@de.de",
-//   profPhone: "0544774121",
-//   profImage:
-//     "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
-//   profPrice: "140",
-// };
 
 class ProfEdit extends Component {
   state = {
@@ -51,13 +37,8 @@ class ProfEdit extends Component {
 
     return (
       <React.Fragment>
-        <Header title="Edit your Card" description="Edit" />
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-4 col-lg-5 col-md-8">
-              <img className="img-fluid w-80" src={image} alt="signin" />
-            </div>
-          </div>
+        <Header title="Edit your Card" description="Edit your Card and Save" />
+        <div className="container prof-create">
           <div className="row">
             <ProfEditForm initialFormValues={prof} profSchema={profSchema} />
           </div>

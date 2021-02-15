@@ -21,10 +21,11 @@ import ProfEdit from "views/profEdit";
 const App = () => {
   const [user] = useState(userService.getCurrentUser());
 
+  console.log(user);
   return (
     <React.Fragment>
       <ToastContainer position="top-center" />
-      <header >
+      <header>
         <Navbar user={user} />
       </header>
       <main style={{ minHeight: "500px" }}>
