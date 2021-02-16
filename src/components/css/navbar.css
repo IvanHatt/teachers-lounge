@@ -1,6 +1,11 @@
 @media only screen and (max-width: 1025px) {
   .main-navbar .navbar {
     background-image: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
+    padding: 10px !important;
+  }
+  .navbar-brand img {
+    width: 170px;
+    height: auto;
   }
 }
 .main-navbar .nav-link {
@@ -26,12 +31,12 @@
 }
 
 .dropdown-menu {
-  background-color: rgba(0, 0, 0, 0.4) !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px);
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
   padding: 10px !important;
 }
-
 
 .dropdown-menu .icon {
   width: 20px;
@@ -47,4 +52,16 @@
 
 .dropdown-menu .dropdown-item:hover {
   background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.mob-menu {
+  z-index: 1500;
+  background-image: linear-gradient(90deg, #2b5876 0%, #2b5876 100%);
+  border-radius: 15px;
+  position: fixed;
+  top: 100px;
+  
+  width: 40vw;
+  padding: 2vw;
+  transition: "0.3s ease-in-out";
 }
