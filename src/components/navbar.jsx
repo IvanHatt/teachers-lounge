@@ -52,7 +52,7 @@ const Navbar = (props) => {
               }
         }
       >
-        <div className="navbar-brand">
+        <div className="navbar-brand mr-0">
           <button
             className="user-menu d-lg-none"
             type="button"
@@ -89,15 +89,15 @@ const Navbar = (props) => {
           </li>
         </ul>
 
-        <div className="mt-3 float-right">
+        <div className="float-right">
           {!user && (
             <ul className="navbar-nav">
-              <li>
-                <NavLink className="btn-styled opaque" to="/signin">
+              <li >
+                <NavLink className="btn-styled opaque btn-mob" to="/signin">
                   Sign In
                 </NavLink>
               </li>
-              <li>
+              <li className='d-none d-lg-inline'>
                 <NavLink className="btn-styled" to="/signup">
                   Sign Up
                 </NavLink>

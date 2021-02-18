@@ -110,6 +110,13 @@ button:active {
   z-index: 1;
 }
 
+@media only screen and (max-width: 470px) {
+  .btn-mob{
+    transform: scale(0.8);
+  }
+ 
+}
+
 .btn-styled:hover {
   text-decoration: none;
   text-shadow: none;
