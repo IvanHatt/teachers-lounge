@@ -111,10 +111,9 @@ button:active {
 }
 
 @media only screen and (max-width: 470px) {
-  .btn-mob{
+  .btn-mob {
     transform: scale(0.8);
   }
- 
 }
 
 .btn-styled:hover {
@@ -133,7 +132,7 @@ button:active {
 }
 
 .btn-styled.opaque {
-  background:rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   color: #f8f8f8 !important;
 }
 
@@ -231,24 +230,42 @@ li {
   background-position: center;
 }
 
-
-.filter{
+.filter {
   position: fixed;
-  width: 340px;
-  top: 200px;
+  width: 300px;
+  top: 220px;
+  left: 40px;
   padding: 25px;
   background: rgba(0, 0, 0, 0.4);
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
+  /* z-index: 10; */
 }
-.filter .filter-item{
+.filter .filter-item {
   margin-top: 20px;
 }
-.filter h1{
+.filter h1 {
   font-size: 60px;
   font-weight: 700;
   line-height: 1.3;
 }
+
+.item-city {
+  position: fixed;
+  top: 416px !important;
+}
+
+.item-category {
+  position: fixed;
+  top: 509px !important;
+}
+/*  
+.explore-cards {
+  position: fixed;
+  top: 416px;
+} */
+
+/* 
 .mobile_menu {
   position: absolute;
   right: 0px;
@@ -279,4 +296,4 @@ li {
 }
 .mobile_menu .slicknav_menu .slicknav_nav .slicknav_item a {
   padding: 0 !important;
-}
+} */

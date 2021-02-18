@@ -125,7 +125,7 @@ const SignUpForm = (props) => {
               </button>
               {!isProf && (
                 <Link to="/prof-signup">
-                  <span className="float-right text-muted">
+                  <span className="text-muted float-right">
                     Are you a Teacher?
                   </span>
                 </Link>

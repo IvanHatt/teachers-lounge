@@ -28,7 +28,7 @@ const App = () => {
       <header>
         <Navbar user={user} />
       </header>
-      <main style={{ minHeight: "500px" }}>
+      <main style={{ minHeight: "400px" }}>
         <Switch>
           <Route path="/about" component={About} />
           <Route path="/explore" component={Explore} />

@@ -42,70 +42,74 @@ class Explore extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-         <div className="col-3">
-          <div className="filter">
+          <div className="col-lg-3">
+            <div className="filter">
               <h1>Filter</h1>
-                <div className="filter-item">
-                  <label htmlFor="">Pick a city</label>
-                  <SelectPicker
-                    data={cities}
-                    onChange={(e) => this.setCity(e)}
-                    block={true}
-                    placeholder={"By city"}
-                  />
-                </div>
-                <div className="filter-item">
-                  <label htmlFor="">Pick an area of study</label>
-                  <SelectPicker
-                    data={categories}
-                    onChange={(e) => this.setCategory(e)}
-                    block={true}
-                    placeholder={"By area of study"}
-                  />
-                </div>
-                <div className="filter-item">
-                  <label htmlFor="">By Price</label>
-                  <RangeSlider
-                    min={0}
-                    max={500}
-                    defaultValue={[0, 1000]}
-                    onChange={(e) => this.setPriceRange(e)}
-                  />
-                </div>
-                <div className="filter-item">
+
+              <div className="filter-item">
+                <label htmlFor="select-city">Pick a city</label>
+                <SelectPicker
+                  menuClassName="item-city"
+                  value={this.state.city}
+                  data={cities}
+                  onChange={(e) => this.setCity(e)}
+                  block={true}
+                  placeholder={"By city"}
+                />
+              </div>
+              <div className="filter-item">
+                <label htmlFor="">Pick an area of study</label>
+                <SelectPicker
+                  menuClassName="item-category"
+                  value={this.state.category}
+                  data={categories}
+                  onChange={(e) => this.setCategory(e)}
+                  block={true}
+                  placeholder={"By area of study"}
+                />
+              </div>
+              <div className="filter-item">
+                <label htmlFor="">By Price</label>
+                <RangeSlider
+                  min={0}
+                  max={500}
+                  defaultValue={[0, 1000]}
+                  onChange={(e) => this.setPriceRange(e)}
+                />
+              </div>
+              <div className="filter-item">
                 {city && (
-                <button
-                  type="button"
-                  className="badge badge-pill badge-warning"
-                  onClick={() => this.setCity()}
-                >
-                  {city}
-                </button>
-              )}
-              {category && (
-                <button
-                  className="badge badge-pill badge-warning"
-                  onClick={() => this.setCategory()}
-                  type="button"
-                >
-                  {category}
-                </button>
-              )}
-              {price.length > 0 && (
-                <span className="badge badge-pill badge-warning">
-                  {price[0]}-{price[1]}
-                </span>
-              )}
-                </div>
-              
+                  <button
+                    type="button"
+                    className="badge badge-pill badge-warning"
+                    onClick={() => this.setCity()}
+                  >
+                    {city}
+                  </button>
+                )}
+                {category && (
+                  <button
+                    className="badge badge-pill badge-warning"
+                    onClick={() => this.setCategory()}
+                    type="button"
+                  >
+                    {category}
+                  </button>
+                )}
+                {price.length > 0 && (
+                  <span className="badge badge-pill badge-warning">
+                    {price[0]}-{price[1]}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
-         <div className="col-9">
-           <div className="container" style={{minHeight: '1600px'}}>
-              <Header
-                title="Explore"
-                description="This is the Teachers' Lounge!"
-              />
+          <div className="col-lg-9">
+            <Header
+              title="Explore"
+              description="This is the Teachers' Lounge!"
+            />
+            <div className="container overflow-auto explore-cards">
               <div className="row">
                 {profs.length > 0 ? (
                   profs.map((prof) => <Prof key={prof._id} prof={prof} />)
@@ -115,11 +119,10 @@ class Explore extends Component {
                   </p>
                 )}
               </div>
-           </div>
-         </div>
+            </div>
+          </div>
         </div>
       </div>
-        
     );
   }
 }

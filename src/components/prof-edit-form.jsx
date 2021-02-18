@@ -6,7 +6,6 @@ import "components/css/forms.css";
 import { cities, categories, profPlaceholder } from "config/default.json";
 import Prof from "./prof";
 
-
 const ProfEditForm = (props) => {
   const [profPreview, setProfPreview] = useState(profPlaceholder);
   useEffect(() => setProfPreview(props.initialFormValues), [
@@ -15,24 +14,36 @@ const ProfEditForm = (props) => {
 
   return (
     <React.Fragment>
-      <div className="col-xl-6 col-lg-7 col-md-12">
+      <div className="col-xl-6 col-md-12 mb-5">
         <Form className="form-default">
           <div className="login-form">
             <FieldInput as="input" label="Name" name="profName" type="text" />
-            <FieldInput
-              as="select"
-              label="Title"
-              name="profTitle"
-              options={categories}
-            />
-
-            <FieldInput
-              as="select"
-              label="City"
-              name="profCity"
-              options={cities}
-            />
-            <FieldInput as="input" label="Price" name="profPrice" type="text" />
+            <div className="row">
+              <div className="col-md-4">
+                <FieldInput
+                  as="select"
+                  label="Title"
+                  name="profTitle"
+                  options={categories}
+                />
+              </div>
+              <div className="col-md-4">
+                <FieldInput
+                  as="select"
+                  label="City"
+                  name="profCity"
+                  options={cities}
+                />
+              </div>
+              <div className="col-md-4">
+                <FieldInput
+                  as="input"
+                  label="Price"
+                  name="profPrice"
+                  type="text"
+                />
+              </div>
+            </div>
 
             <FieldInput
               as="input"
@@ -61,7 +72,10 @@ const ProfEditForm = (props) => {
               Preview
             </button>
             <button
-              onClick={props.handleReset}
+              onClick={() => {
+                setProfPreview(props.initialFormValues);
+                props.handleReset();
+              }}
               type="button"
               className="btn-styled empty"
             >

@@ -7,6 +7,7 @@
 @media (max-width: 575px) {
   .login-form {
     padding: 15px;
+    padding-bottom: 45px;
   }
 }
 
