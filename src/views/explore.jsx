@@ -3,7 +3,10 @@ import { profService } from "services/profService";
 import Prof from "components/prof";
 import { RangeSlider, SelectPicker } from "rsuite";
 import { cities, categories } from "config/default.json";
+
 import Header from "components/header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 
 class Explore extends Component {
   state = {
@@ -45,38 +48,50 @@ class Explore extends Component {
           <div className="col-lg-3">
             <div className="filter">
               <h1>Filter</h1>
+              <button
+                className="float-right mt-3 collapse-button"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <FontAwesomeIcon icon={faAngleDoubleDown} size="2x" />
+              </button>
+              <div className="collapse" id="collapseExample">
+                <div className="filter-item">
+                  <label htmlFor="select-city">Pick a city</label>
+                  <SelectPicker
+                    menuClassName="item-city big"
+                    value={this.state.city}
+                    data={cities}
+                    onChange={(e) => this.setCity(e)}
+                    block={true}
+                    placeholder={"By city"}
+                  />
+                </div>
+                <div className="filter-item">
+                  <label htmlFor="">Pick an area of study</label>
+                  <SelectPicker
+                    menuClassName="item-category big"
+                    value={this.state.category}
+                    data={categories}
+                    onChange={(e) => this.setCategory(e)}
+                    block={true}
+                    placeholder={"By area of study"}
+                  />
+                </div>
+                <div className="filter-item">
+                  <label htmlFor="">By Price</label>
+                  <RangeSlider
+                    min={0}
+                    max={500}
+                    defaultValue={[0, 1000]}
+                    onChange={(e) => this.setPriceRange(e)}
+                  />
+                </div>
+              </div>
 
-              <div className="filter-item">
-                <label htmlFor="select-city">Pick a city</label>
-                <SelectPicker
-                  menuClassName="item-city"
-                  value={this.state.city}
-                  data={cities}
-                  onChange={(e) => this.setCity(e)}
-                  block={true}
-                  placeholder={"By city"}
-                />
-              </div>
-              <div className="filter-item">
-                <label htmlFor="">Pick an area of study</label>
-                <SelectPicker
-                  menuClassName="item-category"
-                  value={this.state.category}
-                  data={categories}
-                  onChange={(e) => this.setCategory(e)}
-                  block={true}
-                  placeholder={"By area of study"}
-                />
-              </div>
-              <div className="filter-item">
-                <label htmlFor="">By Price</label>
-                <RangeSlider
-                  min={0}
-                  max={500}
-                  defaultValue={[0, 1000]}
-                  onChange={(e) => this.setPriceRange(e)}
-                />
-              </div>
               <div className="filter-item">
                 {city && (
                   <button
