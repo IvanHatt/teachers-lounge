@@ -243,12 +243,12 @@ li {
 
   .item-city.big {
     position: fixed;
-    top: 560px !important;
+    top: 475px !important;
   }
 
   .item-category.big {
     position: fixed;
-    top: 654px !important;
+    top: 560px !important;
   }
 }
 

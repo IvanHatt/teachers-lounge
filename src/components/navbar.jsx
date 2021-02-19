@@ -53,18 +53,32 @@ const Navbar = (props) => {
         }
       >
         <div className="navbar-brand mr-0">
-          <button
-            className="user-menu d-lg-none"
-            type="button"
-            onClick={() => setToggle(!toggle)}
-          >
-            <span>
-              <FontAwesomeIcon icon={faAngleDoubleDown} />
-            </span>
-          </button>
+      
+          <div className="dropdown">
           <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
+            <button className="user-menu dropdown-toggle d-lg-none" type="button" id="mob-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+            </button>
+            <div className="dropdown-menu mob-menu d-lg-none" aria-labelledby="mob-menu">
+          <div className="mob-item">
+            <NavLink className="nav-link" to="/" exact>
+              Home
+            </NavLink>
+          </div>
+          <div className="mob-item">
+            <NavLink className="nav-link" to="/about">
+              About
+            </NavLink>
+          </div>
+          <div className="mob-item">
+            <NavLink className="nav-link" to="/explore">
+              Explore
+            </NavLink>
+          </div>
+        </div>
+          </div>
+         
         </div>
 
         <ul
@@ -177,25 +191,7 @@ const Navbar = (props) => {
           )}
         </div>
       </nav>
-      {toggle && (
-        <div className="mob-menu d-lg-none">
-          <div className="mob-item it-one">
-            <NavLink className="nav-link" to="/" exact>
-              Home
-            </NavLink>
-          </div>
-          <div className="mob-item it-two">
-            <NavLink className="nav-link" to="/about">
-              About
-            </NavLink>
-          </div>
-          <div className="mob-item it-three">
-            <NavLink className="nav-link" to="/explore">
-              Explore
-            </NavLink>
-          </div>
-        </div>
-      )}
+        
     </div>
   );
 };

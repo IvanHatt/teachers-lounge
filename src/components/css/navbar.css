@@ -8,7 +8,7 @@
     height: auto;
   }
 }
-.main-navbar .nav-link {
+.navbar-nav .nav-link {
   color: white;
   font-family: "Dosis", sans-serif;
   font-style: normal;
@@ -19,9 +19,23 @@
   margin: 0 50px;
 }
 
-.main-navbar .nav-link.active {
+.navbar-nav .nav-link.active {
   transform: scale(1.3);
   font-weight: 700;
+}
+
+.mob-menu .nav-link {
+  color: white;
+  font-family: "Dosis", sans-serif;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 27px;
+  letter-spacing: 0.05em;
+}
+
+.mob-menu .nav-link.active {
+  font-weight: 700;
+  padding-left: auto;
 }
 
 .user-menu {
@@ -66,7 +80,6 @@
   border-radius: 15px;
   position: fixed;
   top: 100px;
-
   width: 40vw;
   padding: 2vw;
   transition: "0.3s ease-in-out";
