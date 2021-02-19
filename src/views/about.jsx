@@ -7,14 +7,13 @@ import ContactForm from "components/contact-form";
 const About = () => {
   return (
     <React.Fragment>
-      <Header title={"About Us"}></Header>
-      <div className="container">
-        <div className="row justify-content-center">
+      <div className="container mt-5">
+        <div className="row justify-content-center mt-5">
           <div className="col-xl-6 col-lg-5 col-md-8">
             <img className="img-fluid w-80" src={hifiImg} alt="learning" />
           </div>
           <div className="col-xl-6 col-lg-7 col-md-12">
-            <h2 className="text-center">Our Story</h2>
+            <h1 className="text-center">Our Story</h1>
             <p className="text-justify">
               Welcome to The Teachers' Lounge, your number one source for
               finding teh best teacher. We're dedicated to giving you the very
@@ -31,8 +30,8 @@ const About = () => {
             </p>
           </div>
         </div>
-        <div className="row justify-content-center">
-          <div className="col-xl-6 col-lg-7 col-md-12">
+        <div className="row justify-content-center mt-5">
+          <div className="col-xl-6 col-lg-7 col-md-12 mt-5">
             <ContactForm />
           </div>
           <div className="col-xl-6 col-lg-5 col-md-8">

@@ -39,7 +39,7 @@ h6 {
   color: #f8f8f8;
   margin-top: 0px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 p {
@@ -243,12 +243,12 @@ li {
 
   .item-city.big {
     position: fixed;
-    top: 506px !important;
+    top: 560px !important;
   }
 
   .item-category.big {
     position: fixed;
-    top: 599px !important;
+    top: 654px !important;
   }
 }
 

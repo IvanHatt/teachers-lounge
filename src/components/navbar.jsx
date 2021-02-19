@@ -72,17 +72,17 @@ const Navbar = (props) => {
             scrollState === "nav-up" ? "d-lg-flex" : ""
           }`}
         >
-          <li className="nav-item mr-3">
+          <li className="nav-item">
             <NavLink className="nav-link" to="/" exact>
               Home
             </NavLink>
           </li>
-          <li className="nav-item mr-3">
+          <li className="nav-item">
             <NavLink className="nav-link" to="/about">
               About
             </NavLink>
           </li>
-          <li className="nav-item mr-3">
+          <li className="nav-item">
             <NavLink className="nav-link" to="/explore">
               Explore
             </NavLink>
@@ -92,12 +92,12 @@ const Navbar = (props) => {
         <div className="float-right">
           {!user && (
             <ul className="navbar-nav">
-              <li >
+              <li>
                 <NavLink className="btn-styled opaque btn-mob" to="/signin">
                   Sign In
                 </NavLink>
               </li>
-              <li className='d-none d-lg-inline'>
+              <li className="d-none d-xl-inline">
                 <NavLink className="btn-styled" to="/signup">
                   Sign Up
                 </NavLink>

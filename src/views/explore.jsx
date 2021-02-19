@@ -121,7 +121,7 @@ class Explore extends Component {
           </div>
           <div className="col-lg-9">
             <Header
-              title="Explore"
+              title="List of Teachers"
               description="This is the Teachers' Lounge!"
             />
             <div className="container overflow-auto explore-cards">
