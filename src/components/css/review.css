@@ -60,3 +60,18 @@
 .card .card-block p {
   line-height: 1.4;
 }
+
+.reviews h1 {
+  font-size: 64px;
+  font-weight: bold;
+  color: #f8f8f8;
+  margin-bottom: 22px;
+}
+
+@media (max-width: 575px) {
+  .reviews h1 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 20px 0;
+  }
+}

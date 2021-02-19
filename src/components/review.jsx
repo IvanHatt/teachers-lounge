@@ -4,7 +4,7 @@ import user from "assets/user.jpg";
 
 const Review = () => {
   return (
-    <section className="reviews mb-5">
+    <section className="reviews mb-5 mt-lg-5">
       <div className="container">
         <div className="text-center pb-3">
           <h1>Students' reviews</h1>
