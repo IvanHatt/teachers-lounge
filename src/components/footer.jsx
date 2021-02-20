@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -8,6 +7,7 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
 import "components/css/footer.css";
 
 class Footer extends Component {
@@ -19,8 +19,11 @@ class Footer extends Component {
           <div className="row align-items-end">
             <div className="col-xl-9 col-lg-8 col-md-6 mb-4">
               <h1>About Us</h1>
-              <p>Lorem ipsum dolor</p>
-              <p>Amet consectetur adipisicing elit</p>
+              <p>The Teachers' Lounge</p>
+              <p className="mb-2">Tel Aviv, Israel</p>
+              <Link to="/about" className="text-white">
+                <FontAwesomeIcon icon={faAt} /> Contact Us
+              </Link>
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6">
               <h1>Find Us!</h1>

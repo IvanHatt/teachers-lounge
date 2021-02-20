@@ -1,4 +1,3 @@
-import Header from "components/header";
 import React from "react";
 import hifiImg from "assets/hifi-rafiki.svg";
 import contactImg from "assets/contact-rafiki.svg";

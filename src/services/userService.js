@@ -6,10 +6,13 @@ import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { serialize } from "object-to-formdata";
 
+//logout - delete token
 export function logout() {
   localStorage.removeItem(tokenKey);
 }
 
+
+///decode token once connected
 export function getCurrentUser() {
   try {
     const jwt = localStorage.getItem(tokenKey);
@@ -19,16 +22,21 @@ export function getCurrentUser() {
   }
 }
 
+
+//login
 export async function login(email, password) {
   const { data } = await http.post(`${apiUrl}/auth`, { email, password });
   localStorage.setItem(tokenKey, data.token);
 }
 
+//register
 export async function signup(values) {
   const dataForm = serialize(values);
   return await http.post(`${apiUrl}/users`, dataForm);
 }
 
+
+///add card to favorites
 export async function addFavorite(profId) {
   try {
     await http.put(`${apiUrl}/users/add-fav/${profId}`);
@@ -42,6 +50,8 @@ export async function addFavorite(profId) {
   }
 }
 
+
+///remove from favorites
 export async function removeFavorite(profId) {
   try {
     await http.put(`${apiUrl}/users/delete-fav/${profId}`);
@@ -56,6 +66,8 @@ export async function removeFavorite(profId) {
   }
 }
 
+
+//schemas
 export const userSchema = Yup.object({
   firstName: Yup.string()
     .min(2, "Must be at least 2 characters")

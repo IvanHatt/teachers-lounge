@@ -1,7 +1,9 @@
 import Header from "components/header";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { profService } from "services/profService";
 import Prof from "components/prof";
+import image from "assets/favs-rafiki.svg";
 
 class Favorites extends Component {
   state = {
@@ -26,7 +28,15 @@ class Favorites extends Component {
                 <Prof key={prof._id} prof={prof} favDisplay={true} />
               ))
             ) : (
-              <p>No cards found...</p>
+              <div className="col-12 favsnot">
+                <div className="text-center m-5">
+                  <h3>No Favorites yet...</h3>
+                  <img src={image} alt="favs" />
+                  <Link to="/explore" className="text-white d-block">
+                    Explore all the teachers, and find your favorite!
+                  </Link>
+                </div>
+              </div>
             )}
           </div>
         </div>

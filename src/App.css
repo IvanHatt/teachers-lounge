@@ -1,17 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;700;800&family=Titillium+Web:ital,wght@0,400;0,700;1,200;1,400&display=swap");
 
-/* 
-font-family: 'Dosis', sans-serif;
-font-family: 'Titillium Web', sans-serif; */
-/* 
-#f8e9a1 - amarillo
-#f76c6c - rojo
-#a8d0e6 - celeste
-#374785 - azul claro
-#24305e - azul oscuro
-
-*/
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -164,61 +152,7 @@ button:active {
 li {
   list-style: none;
 }
-/* 
-.btn {
-  background: #f76c6c !important;
-  font-family: "Dosis", sans-serif;
-  color: #fff !important;
-  cursor: pointer;
-  display: inline-block !important;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 5px;
-  line-height: 1;
-  -moz-user-select: none;
-  letter-spacing: 1px;
-  line-height: 0;
-  margin-bottom: 0;
-  transition: color 0.4s linear;
-  position: relative;
-  z-index: 1;
-  border: 0;
-  overflow: hidden;
-  margin: 0;
-  display: inline-block !important;
-}
 
-.btn::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 101%;
-  height: 101%;
-  background: #374785;
-  z-index: 1;
-  border-radius: 5px;
-  transition: transform 0.5s;
-  transition-timing-function: ease;
-  transform-origin: 0 0;
-  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
-  transform: scaleX(0);
-  border-radius: 0px;
-}
-.btn:hover {
-  background-position: right;
-}
-.btn:hover::before {
-  transform: scaleX(1);
-  color: #fff !important;
-  z-index: -1;
-}
-
-.btn.focus,
-.btn:focus {
-  outline: 0;
-  box-shadow: none;
-} */
 .prof-create {
   background-image: url("/src/assets/teaching-rafiki.svg");
   background-size: 60%;
@@ -287,41 +221,7 @@ li {
   background: none;
 }
 
-/*  
-.explore-cards {
-  position: fixed;
-  top: 416px;
-} */
-
-/* 
-.mobile_menu {
-  position: absolute;
-  right: 0px;
-  width: 100%;
-  z-index: 99;
+.favsnot {
+  display: grid;
+  place-items: center;
 }
-.mobile_menu .slicknav_menu {
-  background: transparent;
-  margin-top: 0px !important;
-}
-.mobile_menu .slicknav_menu .slicknav_btn {
-  top: -27px;
-}
-.mobile_menu .slicknav_menu .slicknav_btn .slicknav_icon-bar {
-  background-color: #fff !important;
-}
-.mobile_menu .slicknav_menu .slicknav_nav {
-  margin-top: 9px !important;
-  background: #c86fff;
-}
-.mobile_menu .slicknav_menu .slicknav_nav a:hover {
-  background: transparent;
-  color: #c86fff;
-}
-.mobile_menu .slicknav_menu .slicknav_nav a {
-  font-size: 15px;
-  padding: 7px 10px;
-}
-.mobile_menu .slicknav_menu .slicknav_nav .slicknav_item a {
-  padding: 0 !important;
-} */

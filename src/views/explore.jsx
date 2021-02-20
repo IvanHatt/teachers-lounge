@@ -3,7 +3,6 @@ import { profService } from "services/profService";
 import Prof from "components/prof";
 import { RangeSlider, SelectPicker } from "rsuite";
 import { cities, categories } from "config/default.json";
-
 import Header from "components/header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
@@ -35,6 +34,7 @@ class Explore extends Component {
   };
 
   render() {
+    //filter the collection of cards and then render
     let { profs, city, category, price } = this.state;
     if (city) profs = profs.filter((prof) => prof.profCity === city);
     if (category) profs = profs.filter((prof) => prof.profTitle === category);
@@ -130,7 +130,7 @@ class Explore extends Component {
                   profs.map((prof) => <Prof key={prof._id} prof={prof} />)
                 ) : (
                   <p className="text-center">
-                    <span> No Cards found...</span>
+                    <span> No Cards matching your criteria...</span>
                   </p>
                 )}
               </div>

@@ -1,9 +1,11 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import { toast } from "react-toastify";
 import FieldInput from "helpers/fieldInput";
 import "components/css/forms.css";
 
+///submit demo, not actually sending email
 const ContactForm = () => {
   return (
     <Formik
@@ -15,7 +17,17 @@ const ContactForm = () => {
       })}
       validateOnBlur={false}
       validateOnChange={false}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={() =>
+        toast.success("Thanks! We will contact you shortly!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      }
     >
       <div className="login-body">
         <Form className="form-default" autoComplete="off">

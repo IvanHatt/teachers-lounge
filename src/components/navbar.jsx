@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAngleDoubleDown,
   faStar,
   faSearch,
   faSignOutAlt,
@@ -17,7 +16,6 @@ import "components/css/navbar.css";
 const Navbar = (props) => {
   const { user } = props;
   const [scrollState, setScrollState] = useState("nav-up");
-  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     let listener = document.addEventListener("scroll", (e) => {
@@ -53,32 +51,39 @@ const Navbar = (props) => {
         }
       >
         <div className="navbar-brand mr-0">
-      
           <div className="dropdown">
-          <Link to="/">
-            <img src={logo} alt="logo" />
-          </Link>
-            <button className="user-menu dropdown-toggle d-lg-none" type="button" id="mob-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-            </button>
-            <div className="dropdown-menu mob-menu d-lg-none" aria-labelledby="mob-menu">
-          <div className="mob-item">
-            <NavLink className="nav-link" to="/" exact>
-              Home
-            </NavLink>
+            <Link to="/">
+              <img src={logo} alt="logo" />
+            </Link>
+            <button
+              className="user-menu dropdown-toggle d-lg-none"
+              type="button"
+              id="mob-menu"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            ></button>
+            <div
+              className="dropdown-menu mob-menu d-lg-none"
+              aria-labelledby="mob-menu"
+            >
+              <div className="mob-item">
+                <NavLink className="nav-link" to="/" exact>
+                  Home
+                </NavLink>
+              </div>
+              <div className="mob-item">
+                <NavLink className="nav-link" to="/about">
+                  About
+                </NavLink>
+              </div>
+              <div className="mob-item">
+                <NavLink className="nav-link" to="/explore">
+                  Explore
+                </NavLink>
+              </div>
+            </div>
           </div>
-          <div className="mob-item">
-            <NavLink className="nav-link" to="/about">
-              About
-            </NavLink>
-          </div>
-          <div className="mob-item">
-            <NavLink className="nav-link" to="/explore">
-              Explore
-            </NavLink>
-          </div>
-        </div>
-          </div>
-         
         </div>
 
         <ul
@@ -191,7 +196,6 @@ const Navbar = (props) => {
           )}
         </div>
       </nav>
-        
     </div>
   );
 };
