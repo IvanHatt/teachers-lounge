@@ -6,10 +6,10 @@ import { toast } from "react-toastify";
 import { userService } from "services/userService";
 import "components/css/forms.css";
 import FieldInput from "helpers/fieldInput";
-import { Imgplaceholder } from "config/default.json";
+import avatar from "assets/avatar.png";
 
 const SignUpForm = (props) => {
-  const [imgPr, setImgPr] = useState(`${Imgplaceholder.profImage}`);
+  const [imgPr, setImgPr] = useState(avatar);
   const { title, isProf } = props;
   if (userService.getCurrentUser()) return <Redirect to="/" />;
   return (
@@ -114,7 +114,7 @@ const SignUpForm = (props) => {
                 onClick={() => {
                   props.handleReset();
                   if (isProf) {
-                    setImgPr(`${Imgplaceholder.profImage}`);
+                    setImgPr(avatar);
                     props.setFieldValue("profImage", "");
                   }
                 }}
