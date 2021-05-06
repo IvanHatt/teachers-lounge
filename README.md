@@ -4,3 +4,6 @@ Final Project Ivan Hattemer
 Full Stack Developer "HackerU" - 2021
 DataBase MongoDb
 Front End with React
+(Redux not used)
+
+ ‘Illustrations by Freepik Storyset’ https://storyset.com/
